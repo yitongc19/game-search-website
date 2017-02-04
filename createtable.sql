@@ -15,5 +15,5 @@ CREATE TABLE earthquakes (
     User_Score text,
     User_Count real,
     Developer text,
-    Rating text,
+    Rating text
 );
