@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" content="width=device-width, initial-scale=1">
+	<title> Home Page </title>
+	<link rel="stylesheet" href="Stylesheet/homepagestylesheet1.css">
+</head>
+
+<style>
+	.mySlides {display:none}
+	.w3-left, .w3-right, .w3-badge {cursor:pointer}
+	.w3-badge {height:13px;width:13px;padding:0}
+</style>
+
+<style type="text/css">
+    .fieldset-auto-width {
+         display: inline-block;
+    }
+</style>
+
+<body>
+
+<div id="login">
+	<fieldset class="fieldset-auto-width"><a href="login.html">Log in</a></fieldset>
+</div><br><br>
+
+<ul>
+  <li><a href="#Sports">Sports</a></li>
+  <li><a href="#Platform">Platform</a></li>
+  <li><a href="#Racing">Racing</a></li>
+  <li><a href="#Role-Playing">Role-Playing</a></li>
+  <li><a href="#Puzzl">	Puzzle</a></li>
+  <li><a href="#Misc">Misc</a></li>
+  <li><a href="#Shooter">Shooter</a></li>
+  <li><a href="#Simulation">Simulation</a></li>
+  <li><a href="#Fighting">Fighting</a></li>
+  <li><a href="#Adventure">Adventure</a></li>
+  <li><a href="#Strategy">Strategy</a></li>
+  <li><a href="#Action">Action</a></li>
+</ul>
+
+<div class="w3-content w3-display-container" style="max-width:800px">
+  <div class="w3-center w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
+	<div class="clicktoleft" onclick="plusDivs(-1)">&#10094;</div>
+    <div class="clicktoright" onclick="plusDivs(1)">&#10095;</div>
+    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
+    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
+    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
+  </div>
+  	<img class="mySlides" src="supermario.jpg" alt="Game View" style="width:100%">
+  	<img class="mySlides" src="pokemon.jpg" style="width:100%">
+  	<img class="mySlides" src="wii.jpg" style="width:100%">
+</div>
+
+<script>
+	var slideIndex = 1;
+	showDivs(slideIndex);
+
+	function plusDivs(n) {
+  		showDivs(slideIndex += n);
+	}
+
+	function currentDiv(n) {
+	  showDivs(slideIndex = n);
+	}
+
+	function showDivs(n) {
+	  var i;
+	  var x = document.getElementsByClassName("mySlides");
+	  var dots = document.getElementsByClassName("demo");
+	  if (n > x.length) {slideIndex = 1}    
+	  if (n < 1) {slideIndex = x.length}
+	  for (i = 0; i < x.length; i++) {
+	     x[i].style.display = "none";  
+	  }
+	  for (i = 0; i < dots.length; i++) {
+	     dots[i].className = dots[i].className.replace(" w3-white", "");
+	  }
+	  x[slideIndex-1].style.display = "block";  
+	  dots[slideIndex-1].className += " w3-white";
+	}
+</script>
+<br>
+	
+<div class="search">	
+	<input id="searchbox" type="text" name="search" value="">
+	<button id="searchsymbol" type="submit"> &#128269;</button>
+	<br><br>
+</div>	
+<br>
+
+<div>
+    <a href="recommended.html">Recommended</a><br>
+  	<img class="myrecommended" src="supermario.jpg" alt="Game View" style="width:20%">
+  	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  	<img class="myrecommended" src="pokemon.jpg" style="width:20%">
+  	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  	<img class="myrecommended" src="wii.jpg" style="width:20%">    
+</div>
+<br><br>
+
+<div>
+	Categorized by: 
+	<br><br><fieldset class="fieldset-auto-width">
+		<a href="categorizedbypublisher.html">Publisher:</a><br>
+		<a href="gamea.html">1. Game a</a><br>
+		<a href="gameb.html">2. Game b</a><br>
+		<a href="gamec.html">3. Game c</a><br>
+	</fieldset>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<fieldset class="fieldset-auto-width">
+		<a href="categorizedbyplatform.html">Platform:</a><br>
+		<a href="gamea.html">1. Game a</a><br>
+		<a href="gameb.html">2. Game b</a><br>
+		<a href="gamec.html">3. Game c</a><br>
+	</fieldset>
+  	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<fieldset class="fieldset-auto-width">
+	<a href="categorizedbybestseller.html">Best-seller:</a><br>
+		<a href="gamea.html">1. Game a</a><br>
+		<a href="gameb.html">2. Game b</a><br>
+		<a href="gamec.html">3. Game c</a><br>
+	</fieldset>
+	
+
+</body>
+</html>

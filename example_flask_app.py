@@ -8,6 +8,7 @@
     "hello world" app found at http://flask.pocoo.org/.
 '''
 import flask
+from flask import render_template
 import json
 import sys
 
@@ -19,7 +20,7 @@ def hello():
     return 'Hello, Citizen of CS257.'
 
 
-@app.route('/games/')
+@app.route('/fancier/')
 def itDoesHTML():
     htmlStr = '<html lang="en">' + \
               '<head>' + \
@@ -32,6 +33,10 @@ def itDoesHTML():
               '</html>'
     return htmlStr
 
+@app.route('/prettier/')
+def itDoesBetterHTML():
+    return render_template('prettier.html')
+
 
 @app.route('/authors/<author>')
 def get_author(author):
@@ -43,6 +48,18 @@ def get_author(author):
     else:
         author_dictionary = {'last_name': 'McBozo', 'first_name': 'Bozo'}
     return json.dumps(author_dictionary)
+
+
+@app.route('/genres/<genre>')
+def get_genre(genre):
+    '''Get the genre from the data set'''
+    if genre == 'Sport':
+        genre_dictionary = {'genre': 'Sport'}
+    elif genre == 'Action':
+        genre_dictionary = {'genre': 'Action'}
+    else:
+        genre_dictionary = {'genre': 'Unknown'}
+    return json.dumps(genre_dictionary)
 
 
 if __name__ == '__main__':

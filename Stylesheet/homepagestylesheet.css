@@ -1,0 +1,156 @@
+html {
+  background: url("2d80718d3b30c497e99e99dc812931bb.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+    background-opacity: 0.5;
+}
+
+body{
+    font-family:sans-serif;
+    color: black;
+}
+.displayed{
+    float:left;
+}
+#login{
+    float: right;
+    top: 20px;
+	font-size: 16px;
+    font-family: sans-serif, 'Britannic Bold';
+    width: 100px;
+    height: 25px;
+    background: white;
+    opacity: 0.8;
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+    -webkit-border-radius:;
+    -moz-border-radius:;
+    border-radius: 8px;
+    text-align: center;
+    color: initial;
+}
+
+#other_recommended{
+    text-align: justify;
+}
+
+#other_recommended img{
+    display: inline-block;
+    width: 25%;
+    height: auto;
+}
+
+#other_recommended:after{
+    content: '';
+    display: inline-block;
+    width: 20%;
+}
+
+#categorized_by{
+    text-align: center;
+}
+
+#categorized_by fieldset{
+    display: inline-block;
+    height: auto;
+}
+
+#categorized_by:after{
+    content: '';
+    display: inline-block;
+    width: 20%;
+}
+
+.clicktoleft, .clicktoright {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+.clicktoright {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+.clicktoleft:hover, .clicktoright:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+legend{
+    font-size: 25px;
+    font-family:sans-serif;
+}
+
+.search{
+	margin-left:40px;
+}
+
+#searchbox{
+	width: 90%;
+	height: 20px;
+}
+#searchsymbol{
+	width: 3%;
+}
+
+#slideshowpic{
+  min-height: 100%;
+  min-width: 1024px;
+  width: 100%;
+  height: auto;
+  left: 20px;
+}
+
+
+input[type="radio"] {
+    font-family: "sans-serif", Arial;
+}
+
+ul{
+	background-color: #f1f1f1;
+	list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow: hidden;
+    font-family:sans-serif, 'Britannic Bold';
+    opacity: 0.8;
+    border-radius: 20px;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: #000;
+    padding: 8px 20px;
+    text-align: center;
+}
+
+/* Change the link color on hover */
+li a:hover {
+    background-color: #555;
+    color: white;
+    transition: .3s background-color;
+}
+
+ul:after {
+    content:""
+    display: inline-block;
+    width: 10px;
+}
+
+a{
+    text-decoration: none;
+}

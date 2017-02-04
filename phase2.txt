@@ -1,0 +1,36 @@
+Phase 2
+02/02/2017
+
+AUTHOR
+Yitong Chen
+Megan Zhao
+Eva Zhong
+
+
+WHICH DOCUMENT IS WHICH
+- api.py: contains stubs for methods that query the database for information. At the current
+    stage, methods in api.py only have comments that state their intentions and have not
+    been implemented yet.
+
+- api_tests.py: contains the unit tests that cover all the API's query types.
+
+- User_login.html: the webpage where registered users can log into their personal account and
+                   unregistered users will be directed to a sign-up page
+
+- User_signup.html: the webpage where users can sign up for an account with valid email address
+
+- The stylesheet directory contains the stylesheets for the websites as well as background pictures
+    used in the webpages.
+
+- stylesheet_signup.css: the stylesheet for the sign-up page
+
+- stylesheet_login.css: the stylesheet for the log-in page
+
+- The resources directory contains multiple image resources that the webpage will use. At this
+    stage, only the logo image is included.
+
+
+THACKER
+- /var/www/html/cs257/zhaom/webapplab
+
+
