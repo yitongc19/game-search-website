@@ -1,5 +1,5 @@
-DROP TABLE IF EXISTS earthquakes;
-CREATE TABLE earthquakes (
+DROP TABLE IF EXISTS ;
+CREATE TABLE video_game (
   Name text,
   Platform text,
   Year_of_Release real,
