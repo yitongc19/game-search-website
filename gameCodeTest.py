@@ -12,7 +12,7 @@ import sys
 import psycopg2
 import getpass
 
-app = Flask(__name__)
+app = flask.Flask(__name__)
 
 
 database = getpass.getuser()
