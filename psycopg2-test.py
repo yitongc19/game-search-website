@@ -49,8 +49,13 @@ except Exception as e:
     exit()
 
 # We have a cursor now. Iterate over its rows to print the results.
+list = []
+
 for row in cursor:
-    print(row)
+    list.append(row)
+
+for item in list:
+    print(item)
 
 # Don't forget to close the database connection.
 connection.close()
