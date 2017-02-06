@@ -48,7 +48,8 @@ def get_search_by_name(name):
     """
     try:
         cursor = connection.cursor()
-        query = 'SELECT name, platform, yearofrelease, genre videogamessales WHERE name LIKE %Sports%;'
+        query = "SELECT name, platform, yearofrelease, genre FROM video_game WHERE name='Wii Sports' ORDER BY name DESC"
+
         cursor.execute(query)
     
     except Exception as e:
