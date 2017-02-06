@@ -2,7 +2,7 @@ DROP TABLE IF EXISTS video_game;
 CREATE TABLE video_game (
   Name text,
   Platform text,
-  Year_of_Release real,
+  Year_of_Release text,
   Genre text,
   Publisher text,
     NA_Sales real,
