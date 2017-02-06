@@ -50,6 +50,7 @@ def get_search_by_name(name):
         cursor = connection.cursor()
         query = 'SELECT name, platform, yearofrelease, genre videogamessales WHERE name LIKE %Sports%;'
         cursor.execute(query)
+    
     except Exception as e:
         print('Cursor error: {}'.format(e))
         connection.close()
@@ -58,7 +59,7 @@ def get_search_by_name(name):
     gameList = []
     
     for row in cursor:
-       gameList.add(row) 
+       gameList.append(row) 
 
     # Test what is in the gamelist
     if len(gameList) == 0:
@@ -66,5 +67,8 @@ def get_search_by_name(name):
     else:
         for item in gameList:
             print(item)
-    
+            
+    connection.close()
+
     return gameList
+    
