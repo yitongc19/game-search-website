@@ -15,8 +15,8 @@ import getpass
 app = flask.Flask(__name__)
 
 
-database = getpass.getuser()
-user = getpass.getuser()
+database = 'cheny2'
+user = 'cheny2'
 password = getpass.getpass('Enter PostgreSQL password for user {}: '.format(user))
 # Login to the database
 
@@ -49,9 +49,7 @@ def get_search_by_name(name):
     try:
         cursor = connection.cursor()
         query = "SELECT name, platform, yearofrelease, genre FROM video_game WHERE name='Wii Sports' ORDER BY name DESC"
-
         cursor.execute(query)
-    
     except Exception as e:
         print('Cursor error: {}'.format(e))
         connection.close()
