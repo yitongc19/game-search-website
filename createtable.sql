@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS;
+DROP TABLE IF EXISTS video_game;
 CREATE TABLE video_game (
   Name text,
   Platform text,
