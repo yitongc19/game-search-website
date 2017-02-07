@@ -69,10 +69,10 @@ def get_search_by_name():
         for item in gameList:
             print(item)
     '''
+    connection.close()
     print(cursor.fetchall())
 
 
 if __name__ == "__main__":
     app.run()
     get_search_by_name()
-    connection.close()
