@@ -51,7 +51,6 @@ def get_search_by_name():
         cursor = connection.cursor()
         query = "SELECT * FROM video_game WHERE name='15 Days' ORDER BY name DESC"
         cursor.execute(query)
-        print(cursor.fetchall())
     except Exception as e:
         print('Cursor error: {}'.format(e))
         connection.close()
@@ -60,7 +59,7 @@ def get_search_by_name():
 
     gameList = []
 
-    """
+
     for row in cursor:
        gameList.append(row) 
 
@@ -73,7 +72,6 @@ def get_search_by_name():
 
     #print(cursor.fetchall())
     connection.close()
-    """
 
 if __name__ == "__main__":
     #app.run()
