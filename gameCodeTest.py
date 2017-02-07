@@ -49,7 +49,7 @@ def get_search_by_name():
     """
     try:
         cursor = connection.cursor()
-        query = "SELECT * FROM video_game WHERE name='Wii Sports' ORDER BY name DESC"
+        query = "SELECT * FROM video_game WHERE name LIKE %Wii Sports% ORDER BY name DESC"
         cursor.execute(query)
     except Exception as e:
         print('Cursor error: {}'.format(e))
