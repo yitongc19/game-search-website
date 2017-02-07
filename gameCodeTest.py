@@ -47,9 +47,9 @@ def get_search_by_name(name1):
     'othersales':8.45, 'globalsales':82.53, 'criticscore':76,'criticcount': 51,
     'userscore':8, 'usercount':322, 'developer':Nintendo, 'rating':'E'}...]
     """
-    try: 
+    try:
         cursor = connection.cursor()
-        query = ("SELECT * FROM video_game WHERE name='%s'", (name1,))
+        query = ("SELECT * FROM video_game WHERE name='%s'",(name1))
         cursor.execute(query)
 
     except Exception as e:
