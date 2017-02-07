@@ -69,7 +69,7 @@ def get_search_by_name():
             print(item)
             
 
-    return gameList
-    
+
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
+    get_search_by_name()
