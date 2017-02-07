@@ -10,6 +10,7 @@ from flask import render_template
 import json
 import sys
 import psycopg2
+
 import getpass
 
 app = flask.Flask(__name__)
@@ -30,7 +31,7 @@ except Exception as e:
 
 
 @app.route('/search/name/<name>')
-def get_search_by_name(name):
+def get_search_by_name():
     """ Return a list of dictionaries that contains the input name, each of which
     describes one videogame with keys 'name', 'platform', 'yearofrelease', 'genre', '
     publisher', 'nasales', 'jpsales', 'othersales', 'globalsales', 'criticscore',
@@ -48,7 +49,7 @@ def get_search_by_name(name):
     """
     try:
         cursor = connection.cursor()
-        query = "SELECT name, platform, yearofrelease, genre FROM video_game WHERE name='Wii Sports' ORDER BY name DESC"
+        query = "SELECT * FROM video_game WHERE name='Wii Sports' LIKE '%Wil Sports%' ORDER BY name DESC"
         cursor.execute(query)
     except Exception as e:
         print('Cursor error: {}'.format(e))
@@ -67,7 +68,9 @@ def get_search_by_name(name):
         for item in gameList:
             print(item)
             
-    connection.close()
 
     return gameList
     
+if __name__ == "__main__":
+    app.run(debug=True)
+    get_search_by_name()
