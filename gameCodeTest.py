@@ -31,7 +31,7 @@ except Exception as e:
 
 
 @app.route('/search/name/<name>')
-def get_search_by_name():
+def get_search_by_name(name1):
     """ Return a list of dictionaries that contains the input name, each of which
     describes one videogame with keys 'name', 'platform', 'yearofrelease', 'genre', '
     publisher', 'nasales', 'jpsales', 'othersales', 'globalsales', 'criticscore',
@@ -49,8 +49,9 @@ def get_search_by_name():
     """
     try:
         cursor = connection.cursor()
-        query = "SELECT * FROM video_game WHERE name LIKE '%Wii Sports%' ORDER BY name DESC"
+        query = "SELECT * FROM video_game WHERE name=name1"
         cursor.execute(query)
+
     except Exception as e:
         print('Cursor error: {}'.format(e))
         connection.close()
@@ -70,9 +71,9 @@ def get_search_by_name():
         for item in gameList:
             print(item)
 
-    #print(cursor.fetchall())
     connection.close()
 
 if __name__ == "__main__":
     #app.run()
-    get_search_by_name()
+    #The code works after commenting 'app.run()'
+    get_search_by_name("Wii Sports")
