@@ -56,7 +56,7 @@ def get_search_by_name():
         connection.close()
         exit()
 
-    '''
+
     gameList = []
     
     for row in cursor:
@@ -68,8 +68,8 @@ def get_search_by_name():
     else:
         for item in gameList:
             print(item)
-    '''
-    print(cursor.fetchall())
+
+    #print(cursor.fetchall())
     connection.close()
 
 
