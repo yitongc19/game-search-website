@@ -69,7 +69,7 @@ def get_search_by_name():
         for item in gameList:
             print(item)
     '''
-    return cursor.fetchall()
+    print(cursor.fetchall())
 
 
 if __name__ == "__main__":
