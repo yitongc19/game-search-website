@@ -74,5 +74,5 @@ def get_search_by_name():
 
 
 if __name__ == "__main__":
-    app.run()
-    #get_search_by_name()
+    #app.run()
+    get_search_by_name()
