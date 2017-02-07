@@ -55,7 +55,8 @@ def get_search_by_name():
         print('Cursor error: {}'.format(e))
         connection.close()
         exit()
-    
+
+    '''
     gameList = []
     
     for row in cursor:
@@ -67,9 +68,11 @@ def get_search_by_name():
     else:
         for item in gameList:
             print(item)
-            
+    '''
+    return cursor.fetchall()
 
 
 if __name__ == "__main__":
     app.run()
     get_search_by_name()
+    connection.close()
