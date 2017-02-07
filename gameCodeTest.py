@@ -50,7 +50,7 @@ def get_search_by_name(name1):
     try:
         cursor = connection.cursor()
         query = "SELECT * FROM video_game WHERE name=VALUES (%s)"
-        cursor.execute(query, ("Wii Sports"))
+        cursor.execute(query, ("Wii Sports",))
 
     except Exception as e:
         print('Cursor error: {}'.format(e))
