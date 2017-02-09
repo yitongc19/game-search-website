@@ -468,7 +468,7 @@ def get_password_with_account_name(myaccountname):
 
     try:
         cursor = accountconnection.cursor()
-        query = "SELECT password FROM account_info WHERE account_name=%s"
+        query = "SELECT Password FROM account_info WHERE Name=%s"
         cursor.execute(query, (myaccountname,))
 
     except Exception as e:
@@ -512,7 +512,7 @@ def get_user_info(myaccountname):
 
     try:
         cursor = accountconnection.cursor()
-        query = "SELECT email_address, favourite_games FROM account_info WHERE account_name=%s"
+        query = "SELECT Email, Favouritegame FROM account_info WHERE Name=%s"
         cursor.execute(query, (myaccountname,))
 
     except Exception as e:
@@ -558,7 +558,7 @@ def get_password_with_email(myuseremail):
 
     try:
         cursor = accountconnection.cursor()
-        query = "SELECT password FROM account_info WHERE user_email=%s"
+        query = "SELECT Password FROM account_info WHERE Email=%s"
         cursor.execute(query, (myusername,))
 
     except Exception as e:
