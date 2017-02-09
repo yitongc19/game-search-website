@@ -506,6 +506,7 @@ def get_user_info(myaccountname):
     """
     try:
         accountconnection = psycopg2.connect(database=database, user=user, password=password)
+        
     except Exception as e:
         print(e)
         exit()
@@ -523,7 +524,7 @@ def get_user_info(myaccountname):
     accountDic = {}
     myemailaddress, myfavouritegames = cursor.fetchone()
     accountDic["email_address"] = myemailaddress
-    accountDic["favorite_games"] = myfavouritegames.spilt(str="', ", num=1)
+    accountDic["favorite_games"] = myfavouritegames.split(', ')
 
     # Test what is in the gamelist
 
