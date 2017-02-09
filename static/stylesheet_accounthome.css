@@ -40,35 +40,6 @@ section{
     text-align: center;
     color: initial;
 }
-#navigation{
-	background-color: #f1f1f1;
-	list-style-type: none;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    overflow: hidden;
-    font-family:sans-serif, 'Britannic Bold';
-    opacity: 0.8;
-    border-radius: 20px;
-}
-
-#category {
-    float: left;
-}
-
-#category a {
-    display: block;
-    color: #000;
-    padding: 8px 20px;
-    text-align: center;
-}
-
-/* Change the link color on hover */
-#category a :hover {
-    background-color: #555;
-    color: white;
-    transition: .3s background-color;
-}
 
 #my_favorite{
     color: #000000;

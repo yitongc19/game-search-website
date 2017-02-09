@@ -56,3 +56,9 @@ footer{
     text-align: center;
     font-weight: bold
 }
+
+#nav:after {
+    content:"";
+    display: inline-block;
+    width: 10px;
+}
