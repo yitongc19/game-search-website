@@ -103,17 +103,23 @@
 </div>
 
 <!--Other recommended, high rating games-->
-
+<div id="otherRec">
 <fieldset id="other_recommended">
     <legend><a href="recommended.html" style="color: black; font-size: 20px;">Other Recommendations:</a><br></legend>
-  	<a href="supermario.html"><img class="myrecommended" src="{{ url_for('static', filename='supermario.jpg')}}" alt=""/></a>
+  	<a href="supermario.html">
+        <img class="myrecommended" src="{{ url_for('static', filename='supermario.jpg')}}" alt=""/></a>
   	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  	<a href="pokemon.html"><img class="myrecommended" src="{{ url_for('static', filename='pokemon.jpg')}}" alt=""/></a>
+  	<a href="pokemon.html">
+        <img class="myrecommended" src="{{ url_for('static', filename='pokemon.jpg')}}" alt=""/></a>
   	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  	<a href="wii.jpg"><img class="myrecommended" src="{{ url_for('static', filename='wii.jpg')}}" alt=""/></a>
+  	<a href="wii.jpg">
+        <img class="myrecommended" src="{{ url_for('static', filename='wii.jpg')}}" alt=""/></a>
 </fieldset>
 <br><br>
+</div>
+
 <!--Section allowing user to browse by publisher, platform or sale-record-->
+<div id="browsing">
 <fieldset id="categorized_by">
     <legend>Categorized by:</legend>
 	<br><fieldset class="fieldset-auto-width" style="background:cornflowerblue;opacity: 0.6;width: 25%;">
@@ -136,5 +142,6 @@
 		<a href="gameb.html"style="color: black;">2. Game b</a><br>
 		<a href="gamec.html"style="color: black;">3. Game c</a><br>
 	</fieldset>
-
 </fieldset>
+</div>
+{% endblock %}

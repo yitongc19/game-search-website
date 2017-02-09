@@ -1,0 +1,44 @@
+{% extends basic.css %}
+
+{% block title %}
+    <title> Change Your Email </title>
+{% endblock %}
+
+{% block stylesheet %}
+<link rel="stylesheet" href="{{ url_for('static', filename='basic.css')}}">
+<link rel="stylesheet" href="{{ url_for('static', filename='stylesheet_changeEmail.css')}}">
+{% endblock %}
+
+{% block functions %}
+{% endblock %}
+
+{% block global_navigation %}
+{% endblock %}
+
+{% block content %}
+<div id="content">
+<h2> <u> Change Your Email Address </u></h2>
+<section id="change_email">
+    <p>Please enter your user name:
+    <input type="text" value=""><br>
+    </p>
+    <p> Please enter your password:
+    <input type="text" value=""><br>
+    </p>
+    <p> Please enter your new email address:
+    <input type="text" value="" style="width:175px"><br>
+    </p>
+    <p> Re-enter the new email address:
+    <input type="text" value="" style="width:175px"> </p>
+    <form action="Account_home.html">
+        <button onclick="myFunction()">Submit</button>
+        <script>
+            function myFunction() {
+                confirm("Your email has been successfully updated!" +
+                "\nClick 'OK' and you will be taken back to your account page!");
+            }
+        </script>
+    </form>
+</section>
+</div>
+{% endblock %}

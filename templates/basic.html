@@ -56,7 +56,7 @@
     {% block head_style %}
     {% endblock %}
 
-    <body>
+    <body background="{{ url_for('static', filename='universal_background,jpg')}}">
         {% block content %}
         {% endblock %}
     </body>
