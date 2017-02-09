@@ -582,7 +582,7 @@ def get_password_with_email(myuseremail):
 if __name__ == '__main__':
 #    print(get_display_by_genre("Sports"))
 #    print(get_name_display_by_genre("Sports"))
-    print(get_search_by_name("Wii Sports"))
+    print(get_user_info("cheny2"))
     if len(sys.argv) != 3:
         print('Usage: {0} host port'.format(sys.argv[0]), file=sys.stderr)
         exit()
