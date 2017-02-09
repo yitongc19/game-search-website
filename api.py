@@ -13,8 +13,8 @@ import getpass
 
 app = flask.Flask(__name__)
 
-database = 'cheny2'
-user = 'cheny2'
+database = 'zhonge'
+user = 'zhonge'
 password = getpass.getpass('Enter PostgreSQL password for user {}: '.format(user))
 # Login to the database
 
@@ -461,7 +461,7 @@ def get_password_with_account_name(myaccountname):
     'vic31415@@'
     """
     try:
-        accountconnection = psycopg2.connect(database=account_info, user=user, password=password)
+        accountconnection = psycopg2.connect(database=database, user=user, password=password)
     except Exception as e:
         print(e)
         exit()
@@ -505,7 +505,7 @@ def get_user_info(myaccountname):
     'Call of Duty: Black Ops 3']}
     """
     try:
-        accountconnection = psycopg2.connect(database=account_info, user=user, password=password)
+        accountconnection = psycopg2.connect(database=database, user=user, password=password)
     except Exception as e:
         print(e)
         exit()
@@ -551,7 +551,7 @@ def get_password_with_email(myuseremail):
      'vic31415@@'
     """
     try:
-        accountconnection = psycopg2.connect(database=account_info, user=user, password=password)
+        accountconnection = psycopg2.connect(database=database, user=user, password=password)
     except Exception as e:
         print(e)
         exit()
