@@ -130,8 +130,7 @@ class api_tests(unittest.TestCase):
     ## This test is expected to fail.
     def testGetUserInfo(self):
         # user information as give api.py
-        userInfoDict = {'email_address':'cheny2@carleton.edu', 'favorite_games':['Halo 3', 'Super Mario Land',
-    'Call of Duty: Black Ops 3']}
+        userInfoDict = {'email_address':'cheny2@carleton.edu', 'favorite_games':['Halo 3', 'Super Mario Land','Call of Duty: Black Ops 3']}
         self.assertEqual(self.api_checker.get_user_info("cheny2"), userInfoDict)
 
 
