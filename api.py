@@ -485,7 +485,7 @@ def get_password_with_account_name(myaccountname):
         for item in gameList:
             print(item)
     """
-    acccountconnection.close()
+    accountconnection.close()
 
     return mypassword
 
@@ -559,7 +559,7 @@ def get_password_with_email(myuseremail):
     try:
         cursor = accountconnection.cursor()
         query = "SELECT Password FROM account_info WHERE Email=%s"
-        cursor.execute(query, (myusername,))
+        cursor.execute(query, (myuseremail,))
 
     except Exception as e:
         print('Cursor error: {}'.format(e))
