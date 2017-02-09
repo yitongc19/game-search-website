@@ -13,8 +13,8 @@ import getpass
 
 app = flask.Flask(__name__)
 
-database = 'cheny2'
-user = 'cheny2'
+database = 'zhonge'
+user = 'zhonge'
 password = getpass.getpass('Enter PostgreSQL password for user {}: '.format(user))
 # Login to the database
 
@@ -47,8 +47,8 @@ def get_search_by_name(myname):
         exit()
     try:
         cursor = connection.cursor()
-        query = "SELECT * FROM video_game WHERE name LIKE %s"
-        cursor.execute(query, ('%'+myname+'%',))
+        query = "SELECT * FROM video_game WHERE name = %s"
+        cursor.execute(query, (myname,))
 
     except Exception as e:
         print('Cursor error: {}'.format(e))
@@ -59,8 +59,7 @@ def get_search_by_name(myname):
 
     for row in cursor:
         gamedic = {}
-        myname, myplatform, myyearofrelease, mygenre, mypublisher, mynasales, myeusales, myjpsales,
-        myothersales, myglobalsales, mycriticscore, mycriticcount, myuserscore, myusercount, mydeveloper, myrating = row
+        myname, myplatform, myyearofrelease, mygenre, mypublisher, mynasales, myeusales, myjpsales, myothersales, myglobalsales, mycriticscore, mycriticcount, myuserscore, myusercount, mydeveloper, myrating = row
         gamedic["platform"] = myplatform
         gamedic["name"] = myname
         gamedic["yearofrelease"] = myyearofrelease
@@ -87,7 +86,7 @@ def get_search_by_name(myname):
         for item in gameList:
             print(item)
     """
-    print(gameList)
+
     connection.close()
     return gameList
 
@@ -136,8 +135,7 @@ def get_search_by_publisher(mypublisher):
 
     for row in cursor:
         gamedic = {}
-        myname, myplatform, myyearofrelease, mygenre, mypublisher, mynasales, myeusales, myjpsales,
-        myothersales, myglobalsales, mycriticscore, mycriticcount, myuserscore, myusercount, mydeveloper, myrating = row
+        myname, myplatform, myyearofrelease, mygenre, mypublisher, mynasales, myeusales, myjpsales, myothersales, myglobalsales, mycriticscore, mycriticcount, myuserscore, myusercount, mydeveloper, myrating = row
         gamedic["platform"] = myplatform
         gamedic["name"] = myname
         gamedic["yearofrelease"] = myyearofrelease
@@ -463,14 +461,14 @@ def get_password_with_account_name(myaccountname):
     'vic31415@@'
     """
     try:
-        accountconnection = psycopg2.connect(database=account_info, user=user, password=password)
+        accountconnection = psycopg2.connect(database=database, user=user, password=password)
     except Exception as e:
         print(e)
         exit()
 
     try:
         cursor = accountconnection.cursor()
-        query = "SELECT password FROM account_info WHERE account_name=%s"
+        query = "SELECT Password FROM account_info WHERE Name=%s"
         cursor.execute(query, (myaccountname,))
 
     except Exception as e:
@@ -507,14 +505,14 @@ def get_user_info(myaccountname):
     'Call of Duty: Black Ops 3']}
     """
     try:
-        accountconnection = psycopg2.connect(database=account_info, user=user, password=password)
+        accountconnection = psycopg2.connect(database=database, user=user, password=password)
     except Exception as e:
         print(e)
         exit()
 
     try:
         cursor = accountconnection.cursor()
-        query = "SELECT email_address, favourite_games FROM account_info WHERE account_name=%s"
+        query = "SELECT Email, Favouritegame FROM account_info WHERE Name=%s"
         cursor.execute(query, (myaccountname,))
 
     except Exception as e:
@@ -553,14 +551,14 @@ def get_password_with_email(myuseremail):
      'vic31415@@'
     """
     try:
-        accountconnection = psycopg2.connect(database=account_info, user=user, password=password)
+        accountconnection = psycopg2.connect(database=database, user=user, password=password)
     except Exception as e:
         print(e)
         exit()
 
     try:
         cursor = accountconnection.cursor()
-        query = "SELECT password FROM account_info WHERE user_email=%s"
+        query = "SELECT Password FROM account_info WHERE Email=%s"
         cursor.execute(query, (myusername,))
 
     except Exception as e:
@@ -582,9 +580,9 @@ def get_password_with_email(myuseremail):
     return mypassword
 
 if __name__ == '__main__':
-    print(get_display_by_genre("Sports"))
-    print(get_name_display_by_genre("Sports"))
-
+#    print(get_display_by_genre("Sports"))
+#    print(get_name_display_by_genre("Sports"))
+    print(get_user_info("cheny2"))
     if len(sys.argv) != 3:
         print('Usage: {0} host port'.format(sys.argv[0]), file=sys.stderr)
         exit()
