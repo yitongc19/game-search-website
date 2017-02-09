@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" content="width=device_width, initial-scale=1">
+    <title>Change Your email</title>
+    <img class="displayed" src="../static/logo.png" alt="HTML5 Icon" style="width:300px;max-width: 100%;height: auto;margin-left: 39%">
+	<link rel="stylesheet" href="../static/stylesheet_changeEmail.css">
+</head>
+
+<body>
+<h2> <u> Change Your Email Address </u></h2>
+<section id="change_email">
+    <p>Please enter your user name:
+    <input type="text" value=""><br>
+    </p><p> Please enter your password:
+    <input type="text" value=""><br>
+    </p><p> Please enter your new email address:
+    <input type="text" value="" style="width:175px"><br>
+    </p><p> Re-enter the new email address:
+    <input type="text" value="" style="width:175px"> </p>
+    <form action="Account_home.html">
+    <button onclick="myFunction()">Submit</button>
+    <script>
+        function myFunction() {
+            confirm("Your email has been successfully updated!" +
+             "\nClick 'OK' and you will be taken back to your account page!");
+        }
+    </script>
+    </form>
+</section>
+</body>
+
+<footer>
+    <p style="position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  font-weight: bold">
+	Contact us:
+<a href="mailto:zhaom@carleton.com?Subject=Help" target="_top" style="font-size: 16px; color: black font-weight:bold">Email Us</a>
+
+</p>
+</footer>
+
+</html>

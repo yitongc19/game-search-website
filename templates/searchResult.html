@@ -1,0 +1,83 @@
+<!--Author: Yitong Chen, Megan Zhao, Eva Zhong-->
+<!--This file creates the user account page of the website-->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" content="width=device-width, initial-scale=1">
+	<title> Search Result for: Search Key</title>
+    <img class="displayed" src="{{ url_for('static', filename='logo.png')}}" alt="HTML5 Icon" style="width:200px;max-width: 100%;height: auto;">
+	<link rel="stylesheet" href="../static/stylesheet_search_result.css">
+
+	<!--The log-in and search functions-->
+<div id="function">
+    <div id="login">
+    <form action="User_login.html">
+    <button type="submit" value="Log In">Log In</button>
+</form>
+</div>
+</div>
+</head>
+
+<body>
+
+<!--Global navigation by genre-->
+<div id="navigation">
+<ul id="navigation">
+  <li id="category"><a href="#Sports">Sports</a></li>
+  <li id="category"><a href="#Platform">Platform</a></li>
+  <li id="category"><a href="#Racing">Racing</a></li>
+  <li id="category"><a href="#Role-Playing">Role-Playing</a></li>
+  <li id="category"><a href="#Puzzle">Puzzle</a></li>
+  <li id="category"><a href="#Misc">Misc</a></li>
+  <li id="category"><a href="#Shooter">Shooter</a></li>
+  <li id="category"><a href="#Simulation">Simulation</a></li>
+  <li id="category"><a href="#Fighting">Fighting</a></li>
+  <li id="category"><a href="#Adventure">Adventure</a></li>
+  <li id="category"><a href="#Strategy">Strategy</a></li>
+  <li id="category"><a href="#Action">Action</a></li>
+</ul>
+</div>
+
+<!--The search again function-->
+<div id="search_again">
+    <fieldset>
+        <legend>Search Again</legend>
+        <input id="search" type="text" name="search" value="" style="width:90%;height: 40px;border-radius: 8px;opacity: 0.6;
+        font-size: 20px;">
+	    <button type="submit" style="width: 47px;height: 40px;border-radius: 5px;background: white; float: right;
+        opacity: 0.9;"> 🔍</button>
+	    <br><br>
+        <form action="">
+        <input type="radio" name="search_criteria" value="search_by_name"> Search By Name
+        <input type="radio" name="search_criteria" value="search_by_genre"> Search By Publisher
+        </form>
+    </fieldset>
+</div>
+<div id="search_result">
+    <h2>Search Result(# results found)</h2>
+    <ul id="result">
+        <li><a href="game1.html">Game1</a>&nbsp&nbsp&nbsp&nbspDeveloper
+        <br><p id="info">General Info</p></li>
+        <li><a href="game2.html">Game2</a>&nbsp&nbsp&nbsp&nbspDeveloper
+        <br><p id="info">General Info</p></li>
+        <li><a href="game3.html">Game3</a>&nbsp&nbsp&nbsp&nbspDeveloper
+        <br><p id="info">General Info</p></li>
+    </ul>
+</div>
+</body>
+
+<footer style="position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  font-weight: bold">
+<hr>
+    <p >
+	Contact us:
+<a href="mailto:zhaom@carleton.com?Subject=Help" target="_top" style="font-size: 16px; color: black;text-align: center">Email Us</a>
+
+</p>
+</footer>
+
+</html>

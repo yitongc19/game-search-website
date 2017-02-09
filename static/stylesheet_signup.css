@@ -1,0 +1,68 @@
+fieldset{
+    margin:auto;
+    line-height: 10px;
+    height: 430px;
+    border-width: 3px;
+}
+
+body{
+	margin: auto;
+	width: 30%;
+	line-height: 10px;
+    font-family:sans-serif;
+    background-image: url("2d80718d3b30c497e99e99dc812931bb.jpg");
+}
+
+legend{
+	font-size: 30px;
+}
+
+p{
+    float:left;
+    line-height:20px;
+    font-size:18px;
+    width:100%;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+input[type="text"]{
+    font-size: 16px;
+    -moz-border-radius:3px;
+    border-radius:5px;;
+    width: 100%;
+    height: 20px;
+
+}
+
+input[type="password"]{
+    font-size: 16px;
+    -moz-border-radius:3px;
+    border-radius:5px;;
+    width: 100%;
+    height: 20px;
+
+}
+
+input[type="submit"]{
+    margin: auto;
+    font-size:20px;
+    font-family:sans-serif;
+    width:100%;
+    min-height: 20px;
+    color: white;
+    background: rgba(153,204,255,0.4);
+    border-radius: 18px;
+}
+
+#have_account{
+    font-size:15px;
+    text-align: center;;
+    margin-bottom: 5px;
+}
+
+label{
+    font-size: 12px;
+    color: darkblue;
+    line-height: 0.1;
+}

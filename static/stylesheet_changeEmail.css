@@ -1,0 +1,31 @@
+html {
+  background: url("2d80718d3b30c497e99e99dc812931bb.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+    background-opacity: 0.5;
+}
+
+section {
+    width: 100%;
+    border: dashed;
+    text-align: center;
+    font-weight:bold;
+    height: 190px;
+}
+
+input[type=text]{
+    border-radius: 3px;
+    opacity:0.8;
+}
+
+
+button{
+    font-family: Serif;
+    font-size:16px;
+}
+
+footer{
+    margin-left: 4%;
+}

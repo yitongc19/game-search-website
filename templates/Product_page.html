@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <header>
+	<meta charset="utf-8" content="width=device-width, initial-scale=1">
+	<title> {{ game_name }}</title>
+    <img class="displayed" src="{{ url_for('static', filename='logo.png')}}" alt="HTML5 Icon" style="width:200px;max-width: 100%;height: auto;">
+	<link rel="stylesheet" href="../static/stylesheet_productPage.css">
+
+
+<!--The log-in and search functions-->
+<div id="function">
+    <div id="login">
+    <form action="User_login.html">
+    <button type="submit" value="Log In">Log In</button>
+</form>
+</div>
+<br>
+	<button type="submit" style="width: 35px;height: 28px;border-radius: 5px;background: white; float: right;
+opacity: 0.9;"> 🔍</button>
+    <input id="search" type="text" name="search" value="" style="float:right;width:150px;height: 20px;border-radius: 8px;opacity: 0.6;
+font-size: 14px;">
+</div>
+        </header>
+
+<nav>
+<!--Global navigation by genre-->
+<ul id="navigation">
+  <li id="category"><a href="#Sports">Sports</a></li>
+  <li id="category"><a href="#Platform">Platform</a></li>
+  <li id="category"><a href="#Racing">Racing</a></li>
+  <li id="category"><a href="#Role-Playing">Role-Playing</a></li>
+  <li id="category"><a href="#Puzzle">Puzzle</a></li>
+  <li id="category"><a href="#Misc">Misc</a></li>
+  <li id="category"><a href="#Shooter">Shooter</a></li>
+  <li id="category"><a href="#Simulation">Simulation</a></li>
+  <li id="category"><a href="#Fighting">Fighting</a></li>
+  <li id="category"><a href="#Adventure">Adventure</a></li>
+  <li id="category"><a href="#Strategy">Strategy</a></li>
+  <li id="category"><a href="#Action">Action</a></li>
+</ul>
+    </nav>
+
+</head>
+
+<style>
+	.mySlides {display:none}
+	.w3-left, .w3-right, .w3-badge {cursor:pointer}
+	.w3-badge {height:13px;width:13px;padding:0}
+</style>
+
+<style type="text/css">
+    .fieldset-auto-width {
+         display: inline-block;
+    }
+</style>
+
+<body>
+
+
+<div id="product_info">
+<h1>Game title</h1>
+<ul id="product_info">
+    <li>Supported Platform:</li>
+    <li>Year of Release:</li>
+    <li>Genre:</li>
+    <li>Publisher:</li>
+    <li>Sale Record worldwide:</li>
+    <li>Critique Score:
+    <br><p id="score_count">（num of critiques:)</p> </li>
+    <li>User Score:
+    <br><p id="score_count"> (num of users:)</p></li>
+    <li>Developer Info: </li>
+    <li>ESBR Rating: </li>
+</ul>
+    </div>
+
+<div id="sidebar">
+<aside>
+<div id="similar_games">
+    <fieldset>
+        <p style="font-size: 18px; font-weight: bold;">Similar Games:</p>
+        <ul id="similar_games" >
+            <li><a href="game1.html">game1</a></li>
+            <li><a href="game2.html">game2</a></li>
+            <li><a href="game3.html">game3</a></li>
+        </ul>
+    </fieldset>
+</div>
+<div id="games_by_same_developer">
+    <fieldset>
+        <p style="font-size: 18px; font-weight: bold;">Games by the same Deveopers:</p>
+        <ul id="games_by_same_developer">
+            <li><a href="game1.html">game1</a></li>
+            <li><a href="game2.html">game2</a></li>
+            <li><a href="game3.html">game3</a></li>
+        </ul>
+    </fieldset>
+</div>
+    </aside>
+</div>
+
+
+
+</body>
+
+<footer style="position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  font-weight: bold">
+<hr>
+    <p >
+	Contact us:
+<a href="mailto:zhaom@carleton.com?Subject=Help" target="_top" style="font-size: 16px; color: black;text-align: center">Email Us</a>
+
+</p>
+</footer>
+
+</html>
+

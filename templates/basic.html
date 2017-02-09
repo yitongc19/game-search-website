@@ -1,0 +1,70 @@
+<!--This is the basic template for the website-->
+<!--Author: Yitong Chen, Megan Zhao, Eva Zhong-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <div id="heading">
+            <meta charset="utf-8" content="width=device-width, initial-scale=1">
+            {% block title %}
+            {% endblock %}
+            <!--The Logo-->
+            <img class="displayed" src="{{ url_for('static', filename='logo.png')}}" alt="HTML5 Icon"
+            style="width:200px;max-width: 100%;height: auto;">
+
+            {%  block stylesheet %}
+            <link rel="stylesheet" href="{{ url_for('static', filename='basic.css')}}">
+            {% endblock %}
+            <!--The functions including log-in and search-->
+            {% block functions %}
+            <div id="fuctions">
+                <div id="login">
+                    <form action="User_login.html">
+                        <button type="submit" value="Log In">Log In</button>
+                    </form>
+                </div>
+                <div id="global_search">
+                    <button type="submit"
+                    style="width: 35px;height: 28px;border-radius: 5px;background: white; float: right; opacity: 0.9;"> 🔍
+                    </button>
+                    <input id="search" type="text" name="search" value=""
+                    style="float:right;width:150px;height: 20px;border-radius: 8px;opacity: 0.6; font-size: 14px;">
+                </div>
+            </div>
+            {% endblock %}
+            <!--Global Navigation-->
+            {% block global_navigation %}
+            <div id="global_nav">
+                <ul id="nav">
+                    <li id="cat"><a href="#Sports">Sports</a></li>
+                    <li id="cat"><a href="#Platform">Platform</a></li>
+                    <li id="cat"><a href="#Racing">Racing</a></li>
+                    <li id="cat"><a href="#Role-Playing">Role-Playing</a></li>
+                    <li id="cat"><a href="#Puzzle">Puzzle</a></li>
+                    <li id="cat"><a href="#Misc">Misc</a></li>
+                    <li id="cat"><a href="#Shooter">Shooter</a></li>
+                    <li id="cat"><a href="#Simulation">Simulation</a></li>
+                    <li id="cat"><a href="#Fighting">Fighting</a></li>
+                    <li id="cat"><a href="#Adventure">Adventure</a></li>
+                    <li id="cat"><a href="#Strategy">Strategy</a></li>
+                    <li id="cat"><a href="#Action">Action</a></li>
+                </ul>
+            </div>
+            {% endblock %}
+        </div>
+    </head>
+
+    {% block head_style %}
+    {% endblock %}
+
+    <body>
+        {% block content %}
+        {% endblock %}
+    </body>
+
+    <footer>
+        <div id="contact_developer">
+            <a href="mailto:zhaom@carleton.com?Subject=Help" target="_top"
+            style="font-size: 16px; color: black;text-align: center">Email Us With Any Questions</a>
+        </div>
+    </footer>
+</html>

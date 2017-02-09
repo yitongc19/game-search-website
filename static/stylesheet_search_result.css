@@ -1,0 +1,32 @@
+html {
+   background: url("universal_background.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+    background-opacity: 0.5;
+}
+
+legend{
+    margin-top: 18px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+input[type=radio]{
+    font-size: 16px;
+}
+
+a{
+    font-size: 22px;
+}
+
+li{
+    color: #404040;
+}
+
+p{
+    text-indent: 1cm;
+    font-size: 18px;
+    color:black;
+}

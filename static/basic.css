@@ -1,0 +1,58 @@
+html {
+   background: url("universal_background.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+    background-opacity: 0.5; 
+}
+
+.displayed{
+    float: left;
+}
+
+#login{
+    float: right;
+    font-size: 38px;
+    font-family: sans-serif;
+    opacity: 0.8;
+}
+
+#nav{
+	background-color: #f1f1f1;
+	list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow: hidden;
+    font-family:sans-serif, 'Britannic Bold';
+    opacity: 0.8;
+    border-radius: 20px;
+}
+
+#cat {
+    float: left;
+}
+
+#cat a {
+    display: block;
+    color: #000;
+    padding: 8px 20px;
+    text-align: center;
+}
+
+/* Change the link color on hover */
+#cat a :hover {
+    background-color: #555;
+    color: white;
+    transition: .3s background-color;
+}
+
+footer{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    font-weight: bold
+}

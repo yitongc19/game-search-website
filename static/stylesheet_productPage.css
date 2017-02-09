@@ -1,0 +1,104 @@
+html {
+  background: url("2d80718d3b30c497e99e99dc812931bb.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+    background-opacity: 0.5;
+}
+
+h2{
+    margin-bottom: 10px;
+}
+
+#account p{
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+#account input{
+    opacity: 0.8;
+    float: left;
+}
+#login{
+    float: right;
+	font-size: 38px;
+    font-family: sans-serif, 'Britannic Bold';
+    opacity: 0.8;
+}
+#navigation{
+	background-color: #f1f1f1;
+	list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow: hidden;
+    font-family:sans-serif, 'Britannic Bold';
+    opacity: 0.8;
+    border-radius: 20px;
+}
+
+#category {
+    float: left;
+}
+
+#category a {
+    display: block;
+    color: #000;
+    padding: 8px 20px;
+    text-align: center;
+}
+
+/* Change the link color on hover */
+#category a :hover {
+    background-color: #555;
+    color: white;
+    transition: .3s background-color;
+}
+
+fieldset{
+    width: 150px;
+    float: right;
+    height:150px;
+    background: #FFF8DC;
+    opacity: 0.7;
+    border-radius: 8px;
+}
+
+#product_info {
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: bold;
+    float: left;
+    margin: 0 0 0 0;
+    width: 728px;
+    padding:0;
+}
+
+#sidebar{
+    float:right;
+    overflow: hidden;
+    width: 300px;
+    margin: 20px -37px 15px 0;
+}
+
+aside{
+    width: 82%;
+}
+
+div{
+    display: block;
+}
+
+ul #similar_games{
+
+    color: #000000;
+}
+
+ul #games_by_same_developer{
+    color:black;
+}
+
+a{
+    font-size: 19px;
+}

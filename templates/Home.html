@@ -1,0 +1,140 @@
+{% extends basic.html %}
+
+{%  block title %}
+<title> Game! Home </title>
+{% endblock %}
+
+{% block stylesheet %}
+<link rel="stylesheet" href="{{ url_for('static', filename='basic.css')}}">
+<link rel="stylesheet" href="{{ url_for('static', filename='homepagestylesheet.css')}}">
+{% endblock %}
+
+{% block function %}
+<div id="fuctions">
+                <div id="login">
+                    <form action="User_login.html">
+                        <button type="submit" value="Log In">Log In</button>
+                    </form>
+                </div>
+</div>
+{% endblock %}
+
+{% block head_style %}
+<style>
+	.mySlides {display:none}
+	.w3-left, .w3-right, .w3-badge {cursor:pointer}
+	.w3-badge {height:13px;width:13px;padding:0}
+</style>
+
+<style type="text/css">
+    .fieldset-auto-width {
+         display: inline-block;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<!--Slideshow displaying the top rated games-->
+<div id="slideshow">
+    <div class="w3-content w3-display-container" style="max-width:100%">
+      <div class="w3-center w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
+        <div class="clicktoleft" onclick="plusDivs(-1)">&#10094;</div>
+        <div class="clicktoright" onclick="plusDivs(1)">&#10095;</div>
+        <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
+        <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
+        <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
+      </div>
+        <div id="slideshowpic">
+            <img class="mySlides" src="{{ url_for('static', filename='supermario.jpg')}}" alt="Game View" style="width: 100%; -webkit-border-radius: ;-moz-border-radius: ;
+        border-radius: 7%">
+        <img class="mySlides" src="{{ url_for('static', filename='pokemon.jpg')}}" style="width: 100%; -webkit-border-radius: ;-moz-border-radius: ;
+        border-radius: 7%">
+        <img class="mySlides" src="{{ url_for('static', filename='wii.jpg')}}" style="width: 100%; -webkit-border-radius: ;-moz-border-radius: ;
+        border-radius: 7%"></div>
+    </div>
+
+
+    <script>
+        var slideIndex = 1;
+        showDivs(slideIndex);
+
+        function plusDivs(n) {
+            showDivs(slideIndex += n);
+        }
+
+        function currentDiv(n) {
+          showDivs(slideIndex = n);
+        }
+
+        function showDivs(n) {
+          var i;
+          var x = document.getElementsByClassName("mySlides");
+          var dots = document.getElementsByClassName("demo");
+          if (n > x.length) {slideIndex = 1}
+          if (n < 1) {slideIndex = x.length}
+          for (i = 0; i < x.length; i++) {
+             x[i].style.display = "none";
+          }
+          for (i = 0; i < dots.length; i++) {
+             dots[i].className = dots[i].className.replace(" w3-white", "");
+          }
+          x[slideIndex-1].style.display = "block";
+          dots[slideIndex-1].className += " w3-white";
+        }
+    </script>
+    <br>
+</div>
+
+<!--Search bar-->
+<div id="main_search">
+<fieldset>
+    <legend> Find What You Want: </legend>
+	<input id="search" type="text" name="search" value=""
+	style="width:90%;height: 40px;border-radius: 8px;opacity: 0.6; font-size: 20px;">
+	<button type="submit"
+	style="width: 47px;height: 40px;border-radius: 5px;background: white; float: right; opacity: 0.9;"> 🔍</button>
+	<br><br>
+    <form action="">
+    <input type="radio" name="search_criteria" value="search_by_name"> Search By Name
+    <input type="radio" name="search_criteria" value="search_by_genre"> Search By Publisher
+</form>
+</fieldset>
+<br>
+</div>
+
+<!--Other recommended, high rating games-->
+
+<fieldset id="other_recommended">
+    <legend><a href="recommended.html" style="color: black; font-size: 20px;">Other Recommendations:</a><br></legend>
+  	<a href="supermario.html"><img class="myrecommended" src="{{ url_for('static', filename='supermario.jpg')}}" alt=""/></a>
+  	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  	<a href="pokemon.html"><img class="myrecommended" src="{{ url_for('static', filename='pokemon.jpg')}}" alt=""/></a>
+  	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  	<a href="wii.jpg"><img class="myrecommended" src="{{ url_for('static', filename='wii.jpg')}}" alt=""/></a>
+</fieldset>
+<br><br>
+<!--Section allowing user to browse by publisher, platform or sale-record-->
+<fieldset id="categorized_by">
+    <legend>Categorized by:</legend>
+	<br><fieldset class="fieldset-auto-width" style="background:cornflowerblue;opacity: 0.6;width: 25%;">
+		<a href="categorizedbypublisher.html" style="font-size: 20px;color:black;">Publisher:</a><br>
+		<a href="publisherA.html" style="color: black;">1. Publisher a</a><br>
+		<a href="publisherB.html"style="color: black;">2. Publisher b</a><br>
+		<a href="publisherC.html"style="color: black;">3. Publisher c</a><br>
+	</fieldset>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<fieldset class="fieldset-auto-width" style="background:orange;opacity: 0.6;width: 25%;">
+		<a href="categorizedbyplatform.html"style="font-size: 20px;color:black;">Platform:</a><br>
+		<a href="PlatformA.html"style="color: black;">1. Platform a</a><br>
+		<a href="PlatformB.html"style="color: black;">2. Platform b</a><br>
+		<a href="PlatformC.html"style="color: black;">3. Platform c</a><br>
+	</fieldset>
+  	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<fieldset class="fieldset-auto-width" style="background:palevioletred;opacity: 0.6;width: 25%;">
+	    <a href="categorizedbybestseller.html" style="font-size: 20px;color:black;">Best-seller:</a><br>
+		<a href="gamea.html"style="color: black;">1. Game a</a><br>
+		<a href="gameb.html"style="color: black;">2. Game b</a><br>
+		<a href="gamec.html"style="color: black;">3. Game c</a><br>
+	</fieldset>
+
+</fieldset>
