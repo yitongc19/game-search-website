@@ -24,15 +24,6 @@ legend{
 	font-size: 30px;
 }
 
-body{
-	margin: auto;
-	width: 40%;
-	line-height: 10px;
-	padding: 50px 0;
-    font-family: sans-serif;
-    background-image: url("2d80718d3b30c497e99e99dc812931bb.jpg");
-}
-
 input[type="text"]{
     border-radius:5px;
 }

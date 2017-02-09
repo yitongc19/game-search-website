@@ -1,7 +1,7 @@
 fieldset{
     margin:auto;
     line-height: 10px;
-    height: 430px;
+    height: auto;
     border-width: 3px;
 }
 
@@ -10,7 +10,7 @@ body{
 	width: 30%;
 	line-height: 10px;
     font-family:sans-serif;
-    background-image: url("2d80718d3b30c497e99e99dc812931bb.jpg");
+    background-image: url("universal_background.jpg");
 }
 
 legend{

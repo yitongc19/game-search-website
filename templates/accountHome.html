@@ -1,0 +1,70 @@
+{% extends "basic.html" %}
+
+{% block title %}
+<title> Your Account </title>
+{% endblock %}
+
+{% block stylesheet %}
+<link rel="stylesheet" href="{{ url_for('static', filename='basic.css')}}">
+<link rel="stylesheet" href="{{ url_for('static', filename='stylesheet_accounthome.css')}}">
+{% endblock %}
+
+{% block functions %}
+     <div id="fuctions">
+                <div id="switch_account">
+                    <form action="User_login.html">
+                        <button type="submit" value="Log In">Switch Account</button>
+                    </form>
+                </div>
+                <div id="global_search">
+                    <button type="submit"
+                    style="width: 35px;height: 28px;border-radius: 5px;background: white; float: right; opacity: 0.9;"> 🔍
+                    </button>
+                    <input id="search" type="text" name="search" value=""
+                    style="float:right;width:150px;height: 20px;border-radius: 8px;opacity: 0.6; font-size: 14px;">
+                </div>
+            </div>
+{% endblock %}
+
+{% block content %}
+<div id="main_content">
+    <section id="account">
+        <h2><u>My Account</u></h2><br>
+        <p>Username: user_name<br>
+        Current email: user_email
+        <form action="Change_email.html">
+        <input id="buttons" type="submit" value="Change my email address" style="font-size: 18px">
+        </form></p>
+    </section>
+
+    <section>
+        <h2><u>My Favorites</u></h2><br>
+        <ul id="my_favorite">
+            <li><a href="#game1">game1</a></li><br>
+            <li><a href="#game2">game2</a></li><br>
+            <li><a href="#game3">game3</a></li><br>
+            <li><a href="#game4">game4</a></li><br>
+            <li><a href="#game5">game5</a></li><br>
+            <li><a href="#game6">game6</a></li><br>
+            <li><a href="#game7">game7</a></li><br>
+            <li><a href="#game8">game8</a></li><br>
+            <li><a href="#game9">game9</a></li><br>
+        </ul>
+    </section>
+
+    <section>
+    <h2><u>Recommended Games</u></h2><br>
+    <ul id="recommended_games">
+        <li><a href="#game1">game1</a></li><br>
+        <li><a href="#game2">game2</a></li><br>
+        <li><a href="#game3">game3</a></li><br>
+        <li><a href="#game4">game4</a></li><br>
+        <li><a href="#game5">game5</a></li><br>
+        <li><a href="#game6">game6</a></li><br>
+        <li><a href="#game7">game7</a></li><br>
+        <li><a href="#game8">game8</a></li><br>
+        <li><a href="#game9">game9</a></li><br>
+    </ul>
+    </section>
+</div>
+{% endblock %}

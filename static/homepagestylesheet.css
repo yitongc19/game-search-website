@@ -1,26 +1,9 @@
-html {
-  background: url("2d80718d3b30c497e99e99dc812931bb.jpg") no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-    background-opacity: 0.5;
-}
+
 
 body{
     font-family:sans-serif;
     color: black;
 }
-.displayed{
-    float:left;
-}
-#login{
-    float: right;
-	font-size: 38px;
-    font-family: sans-serif, 'Britannic Bold';
-    opacity: 0.8;
-}
-
 
 #other_recommended{
     text-align: justify;
@@ -104,53 +87,6 @@ input[type="radio"] {
     font-family: "sans-serif", Arial;
 }
 
-ul{
-	background-color: #f1f1f1;
-	list-style-type: none;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    overflow: hidden;
-    font-family:sans-serif, 'Britannic Bold';
-    opacity: 0.8;
-    border-radius: 20px;
-}
-
-li {
-    float: left;
-}
-
-li a {
-    display: block;
-    color: #000;
-    padding: 8px 20px;
-    text-align: center;
-}
-
-/* Change the link color on hover */
-li a:hover {
-    background-color: #555;
-    color: white;
-    transition: .3s background-color;
-}
-
-
-ul:after {
-    content:""
-    display: inline-block;
-    width: 10px;
-}
-
 a{
     text-decoration: none;
-}
-
-footer{
-    position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  padding: 1rem;
-  background-color: #efefef;
-  text-align: center;
 }

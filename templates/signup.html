@@ -1,0 +1,60 @@
+{% extends "basic.html" %}
+
+{% block title %}
+<title>Sign Up As a Gamer!</title>
+{% endblock %}
+
+{% block stylesheet %}
+<link rel="stylesheet" href="{{ url_for('static', filename='basic.css')}}">
+<link rel="stylesheet" href="{{ url_for('static', filename='stylesheet_signup.css')}}">
+{% endblock %}
+
+{% block functions %}
+{% endblock %}
+
+{% block global_navigation %}
+{% endblock %}
+
+{% block content %}
+<br>
+    <div id="content">
+<form action="action_page.php">
+  <fieldset>
+    <legend>Create account</legend>
+      <p>
+          Username <br>
+          <label for="username_format">(Username must be between 6 and 10 characters,
+          containing only alphanumeric values)</label><br>
+          <input type="text" minlength="6" maxlength="10" name="username" value="">
+          <br>
+      </p>
+      <p>
+          Email <br>
+          <label for="email_format">(e.g. exmaple@gmail.com)</label><br>
+          <input type="text" name="email" value="">
+          <br>
+      </p><p>
+          Password <br>
+          <label for="password_format">(Password must be between 6 and 16 characters,
+          containing only alphanumeric values and/or special characters including
+          ! @ # )</label><br>
+          <input type="password" name="password" value="">
+          <br>
+      </p><p>
+        Password again <br>
+        <label for="reenter_instruction">(Please re-enter your password)</label><br>
+        <input type="password" name="password_again" value="">
+        </p>
+
+
+      <input id="buttons" type="submit" value="Create Account"><br>
+
+      <hr>
+      <p id="have_account">
+          Already have account?
+          <a href="User_login.html">Log in</a>
+      </p>
+  </fieldset>
+</form>
+    </div>
+{% endblock %}
