@@ -47,8 +47,8 @@ def get_search_by_name(myname):
         exit()
     try:
         cursor = connection.cursor()
-        query = "SELECT * FROM video_game WHERE name LIKE %s"
-        cursor.execute(query, ('%'+myname+'%',))
+        query = "SELECT * FROM video_game WHERE name = %s"
+        cursor.execute(query, (myname,))
 
     except Exception as e:
         print('Cursor error: {}'.format(e))
@@ -59,8 +59,7 @@ def get_search_by_name(myname):
 
     for row in cursor:
         gamedic = {}
-        myname, myplatform, myyearofrelease, mygenre, mypublisher, mynasales, myeusales, myjpsales,
-        myothersales, myglobalsales, mycriticscore, mycriticcount, myuserscore, myusercount, mydeveloper, myrating = row
+        myname, myplatform, myyearofrelease, mygenre, mypublisher, mynasales, myeusales, myjpsales, myothersales, myglobalsales, mycriticscore, mycriticcount, myuserscore, myusercount, mydeveloper, myrating = row
         gamedic["platform"] = myplatform
         gamedic["name"] = myname
         gamedic["yearofrelease"] = myyearofrelease
@@ -87,7 +86,7 @@ def get_search_by_name(myname):
         for item in gameList:
             print(item)
     """
-    print(gameList)
+
     connection.close()
     return gameList
 
@@ -136,8 +135,7 @@ def get_search_by_publisher(mypublisher):
 
     for row in cursor:
         gamedic = {}
-        myname, myplatform, myyearofrelease, mygenre, mypublisher, mynasales, myeusales, myjpsales,
-        myothersales, myglobalsales, mycriticscore, mycriticcount, myuserscore, myusercount, mydeveloper, myrating = row
+        myname, myplatform, myyearofrelease, mygenre, mypublisher, mynasales, myeusales, myjpsales, myothersales, myglobalsales, mycriticscore, mycriticcount, myuserscore, myusercount, mydeveloper, myrating = row
         gamedic["platform"] = myplatform
         gamedic["name"] = myname
         gamedic["yearofrelease"] = myyearofrelease
@@ -582,9 +580,9 @@ def get_password_with_email(myuseremail):
     return mypassword
 
 if __name__ == '__main__':
-    print(get_display_by_genre("Sports"))
-    print(get_name_display_by_genre("Sports"))
-
+#    print(get_display_by_genre("Sports"))
+#    print(get_name_display_by_genre("Sports"))
+    print(get_search_by_name("Wii Sports"))
     if len(sys.argv) != 3:
         print('Usage: {0} host port'.format(sys.argv[0]), file=sys.stderr)
         exit()
