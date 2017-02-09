@@ -17,20 +17,27 @@ section{
 }
 
 #switch_account{
-    float: right;
-    top: 20px;
-	font-size: 15px;
-    font-family: sans-serif, 'Britannic Bold';
-    width: 150px;
-    height: auto;
-    background: white;
+    font-size: 30px;
+    font-family: sans-serif;
     opacity: 0.8;
-    -webkit-appearance: button;
-    -moz-appearance: button;
-    appearance: button;
-    border-radius: 8px;
-    text-align: center;
-    color: initial;
+    border-top: 30px;
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 1px;
+    float: right;
+}
+#functions_container{
+    vertical-align: top;
+    position: absolute;
+    right: 0;
+    top:30px;
+    font-size: 13px;
+}
+#global_search_container{
+    display: inline-block;
+    vertical-align: top;
+    padding-top: 10px;
+    float: right;
 }
 
 #my_favorite{

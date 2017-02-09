@@ -1,12 +1,7 @@
-html {
-  background: url("universal_background.jpg") no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-    background-opacity: 0.5;
+.displayed{
+    float: none;
+    margin-left:38%;
 }
-
 section {
     width: 100%;
     border: dashed;

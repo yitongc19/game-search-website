@@ -29,7 +29,7 @@ def accountHome():
 
 @app.route('/browse/')
 def browse():
-    return render_template('browseTemplate.html')
+    return render_template('browse.html')
 
 @app.route('/login/')
 def login():

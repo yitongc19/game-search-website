@@ -90,3 +90,7 @@ input[type="radio"] {
 a{
     text-decoration: none;
 }
+
+footer{
+    position:relative;
+}

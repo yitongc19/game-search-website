@@ -2,12 +2,15 @@ img.displayed{
     display: block;
     margin-left: auto;
     margin-right: auto;
+    float: none;
 }
 
 fieldset {
     padding: 1em;
     font:90%/1 sans-serif;
     border-width: 3px;
+    width: 40%;
+    margin:auto;
   }
 
 label {
@@ -21,7 +24,7 @@ label {
 
 legend{
     font-family: "sans-serif", Arial;
-	font-size: 30px;
+	font-size: 22px;
 }
 
 input[type="text"]{

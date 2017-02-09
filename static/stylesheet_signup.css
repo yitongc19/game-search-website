@@ -1,3 +1,7 @@
+.displayed{
+    float: none;
+}
+
 fieldset{
     margin:auto;
     line-height: 10px;
