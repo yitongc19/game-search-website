@@ -523,7 +523,7 @@ def get_user_info(myaccountname):
     accountDic = {}
     myemailaddress, myfavouritegames = cursor.fetchone()
     accountDic["email_address"] = myemailaddress
-    accountDic["favorite_games"] = myfavouritegames
+    accountDic["favorite_games"] = myfavouritegames.spilt(str="', ", num=1)
 
     # Test what is in the gamelist
 
