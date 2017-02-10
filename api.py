@@ -485,7 +485,7 @@ def get_password_with_account_name(myaccountname):
         for item in gameList:
             print(item)
     """
-    acccountconnection.close()
+    accountconnection.close()
 
     return mypassword
 
@@ -506,6 +506,7 @@ def get_user_info(myaccountname):
     """
     try:
         accountconnection = psycopg2.connect(database=database, user=user, password=password)
+        
     except Exception as e:
         print(e)
         exit()
@@ -523,7 +524,7 @@ def get_user_info(myaccountname):
     accountDic = {}
     myemailaddress, myfavouritegames = cursor.fetchone()
     accountDic["email_address"] = myemailaddress
-    accountDic["favorite_games"] = myfavouritegames
+    accountDic["favorite_games"] = myfavouritegames.split(', ')
 
     # Test what is in the gamelist
 
@@ -559,7 +560,7 @@ def get_password_with_email(myuseremail):
     try:
         cursor = accountconnection.cursor()
         query = "SELECT Password FROM account_info WHERE Email=%s"
-        cursor.execute(query, (myusername,))
+        cursor.execute(query, (myuseremail,))
 
     except Exception as e:
         print('Cursor error: {}'.format(e))

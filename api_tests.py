@@ -116,7 +116,7 @@ class api_tests(unittest.TestCase):
     ## that the user given, in this case "vic31415@@"
     ## This test is expected to fail.
     def testGetPasswordWithAccountNameInfo(self):
-        password = "vic31415@@"
+        password = "12345"
         self.assertEqual(api.get_password_with_account_name("cheny2"), password)
 
 
@@ -143,7 +143,7 @@ class api_tests(unittest.TestCase):
     ## This test is expected to fail.
     def testGetPaswordWithEmail(self):
         # password as given in api.py
-        password = "vic31415@@"
+        password = "12345"
         self.assertEqual(self.api_checker.get_password_with_email("cheny2@carleton.edu"), password)
 
 if __name__ == '__main__':
