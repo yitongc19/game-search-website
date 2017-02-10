@@ -88,3 +88,7 @@ footer{
 a{
     color: #000000;
 }
+
+body{
+    background-size: 100% 100%;
+}

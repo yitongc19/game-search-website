@@ -10,6 +10,7 @@ import json
 import sys
 import psycopg2
 import getpass
+import re
 
 app = flask.Flask(__name__)
 
@@ -40,6 +41,9 @@ def get_search_by_name(myname):
     'othersales':8.45, 'globalsales':82.53, 'criticscore':76,'criticcount': 51,
     'userscore':8, 'usercount':322, 'developer':Nintendo, 'rating':'E'}...]
     """
+    if not myname.isalnum():
+        mypublisher = parseWithSpace(myname)
+
     try:
         connection = psycopg2.connect(database=database, user=user, password=password)
     except Exception as e:
@@ -115,6 +119,9 @@ def get_search_by_publisher(mypublisher):
     'othersales':3.29, 'globalsales':35.52, 'criticscore':82,'criticcount':73,
     'userscore':8.3, 'usercount':709, 'developer':Nintendo, 'rating':E}...]
     """
+    if not mypublisher.isalnum():
+        mypublisher = parseWithSpace(mypublisher)
+
     try:
         connection = psycopg2.connect(database=database, user=user, password=password)
     except Exception as e:
@@ -454,12 +461,17 @@ def get_password_with_account_name(myaccountname):
     :return password: a string of password associated with the given
     account name.
 
-    Assumption: User name should only consist of letters and numbers. If not,
-    it will be formatted using a parsing routine.
+    Assumption: User name should only consist of letters and numbers.
+
 
     Example: http://videogamessales/user/cheny2
     'vic31415@@'
     """
+    # Test bad input
+    if not myaccountname.isalnum():
+        print("The username contains special characters! Please use another username.")
+        raise ValueError
+
     try:
         accountconnection = psycopg2.connect(database=database, user=user, password=password)
     except Exception as e:
@@ -497,13 +509,17 @@ def get_user_info(myaccountname):
     :return: a dictionary that describes the information associated
     with the user with keys 'email_address' and 'favorite_games'.
 
-    Assumption: User name should only consist of letters and numbers. If not,
-    it will be formatted using a parsing routine.
+    Assumption: User name should only consist of letters and numbers.
 
     Example: http://videogamessales/user/home/cheny2
     {'email_address':'cheny2@carleton.edu', 'favorite_games':['Halo 3', 'Super Mario Land',
     'Call of Duty: Black Ops 3']}
     """
+    # Test bad input
+    if not myaccountname.isalnum():
+        print("The username contains special characters! Please use another username.")
+        raise ValueError
+
     try:
         accountconnection = psycopg2.connect(database=database, user=user, password=password)
         
@@ -551,6 +567,10 @@ def get_password_with_email(myuseremail):
      Example: http://videogamessales/retrieve_password/cheny2@carleton.edu
      'vic31415@@'
     """
+    if re.match(r"[^@]+@[^@]+\.[^@]+", myuseremail) == None:
+        print("The email address in invalid")
+        raise ValueError
+
     try:
         accountconnection = psycopg2.connect(database=database, user=user, password=password)
     except Exception as e:
@@ -579,6 +599,18 @@ def get_password_with_email(myuseremail):
     accountconnection.close()
 
     return mypassword
+
+
+def parseWithSpace(inputStr):
+    """
+    Internal facing method that removes all the special characters from the input string
+    except for spaces.
+    :param inputStr:
+    :return: the parsed string
+    """
+    pattern = re.compile("[^a-zA-Z\d\s]")
+    return pattern.sub('', inputStr)
+
 
 if __name__ == '__main__':
 #    print(get_display_by_genre("Sports"))
