@@ -1,0 +1,80 @@
+Phase 3
+02/09/2017
+
+AUTHOR
+Yitong Chen
+Megan Zhao
+Eva Zhong
+
+
+WHICH DOCUMENT IS WHICH
+- api.py: contains stubs for methods that query the database for information. At the current
+    stage, all stubs have been implemented to retrieve data from database
+
+- api_tests.py: contains the unit tests that cover all the API's query types.
+
+- The templates directory contains all the html files for the websites
+
+- login.html: the webpage where registered users can log into their personal account and
+                   unregistered users will be directed to a sign-up page
+
+- signup.html: the webpage where users can sign up for an account with valid email address
+
+- Home.html: the webpage where users can click to log in, where users can search video games 
+    by name and publisher, where games with the highest overall ratings are displayed as slide 
+    shows and recommendations, where a list of publishers is displayed in the order of users' 
+    ratings of the publisher's past products, a list of platforms is displayed in the order of 
+    the number of games the platform supports and a list of best-sellers is displayed in the 
+    order of the product's selling amount
+    
+- Search_result.html: the webpage where users can browse all the search results with their 
+    general information and where users can search again by name and publisher
+    
+- accountHome.html: the webpage where account information such as username and their current emails 
+    is displayed, where users can switch account and change their email addresses, where users' 
+    list of favourite games and a list of recommended games are displayed
+    
+- changeEmail.html: the webpage where users can change their email addresses
+
+- product.html: the webpage where a video game is displayed with all its information in the database,
+    and where a list of similar games and a list of games by the same developers are also displayed
+    
+- basic.html: the basic template for the website
+
+- browse.html: the webpage where a list of video game names are displayed and users will be directed 
+	to the product page of a video game if they click the name of the video game
+	
+- html_noJinja: the directory where html files that do not use Jinja templates are stored. At the current
+	stage, there is no file inside the directory
+
+- The static directory contains the stylesheets for the webpages as well as image resources the 
+	webpage uses.
+    
+- homepagestylesheet.css: the stylesheet for the homepage
+
+- stylesheet_accounthome.css: the stylesheet for the account homepage
+
+- stylesheet_browsePage.css: the stylesheet for the browse page
+
+- stylesheet_changeEmail.css: the stylesheet for the email-changing page
+
+- stylesheet_signup.css: the stylesheet for the sign-up page
+
+- stylesheet_login.css: the stylesheet for the log-in page
+
+- stylesheet_productPage.css: the stylesheet for the product page
+
+- stylesheet_search_result.css: the stylesheet for the search result page
+
+- stylesheet_searchResult.css: the backup stylesheet for the search result page
+
+- basic.css: the basic template for the css file of the website
+
+- The resources directory contains multiple image resources that the webpage will use. At this
+    stage, only the logo image is included.
+    
+- flask_app.py: the Python framework for all the webpages mentioned above
+
+
+THACKER
+- /var/www/html/cs257/cheny2
