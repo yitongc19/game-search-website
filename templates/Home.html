@@ -9,6 +9,9 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='homepagestylesheet.css')}}">
 {% endblock %}
 
+{% block javascript %}
+{% endblock %}
+
 {% block function %}
 <div id="fuctions">
                 <div id="login">
@@ -124,23 +127,23 @@
     <legend>Categorized by:</legend>
 	<br><fieldset class="fieldset-auto-width" style="background:cornflowerblue;opacity: 0.6;width: 25%;">
 		<a href="categorizedbypublisher.html" style="font-size: 20px;color:black;">Publisher:</a><br>
-		<a href="publisherA.html" style="color: black;">1. Publisher a</a><br>
-		<a href="publisherB.html"style="color: black;">2. Publisher b</a><br>
-		<a href="publisherC.html"style="color: black;">3. Publisher c</a><br>
+		<a href="/publisher/activision" style="color: black;">1. Activision</a><br>
+		<a href="/publisher/505Games"style="color: black;">2. 505 Games</a><br>
+		<a href="/publisher/Nintendo"style="color: black;">3. Nintendo</a><br>
 	</fieldset>
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	<fieldset class="fieldset-auto-width" style="background:orange;opacity: 0.6;width: 25%;">
 		<a href="categorizedbyplatform.html"style="font-size: 20px;color:black;">Platform:</a><br>
-		<a href="PlatformA.html"style="color: black;">1. Platform a</a><br>
-		<a href="PlatformB.html"style="color: black;">2. Platform b</a><br>
-		<a href="PlatformC.html"style="color: black;">3. Platform c</a><br>
+		<a href="/platform/xb"style="color: black;">1. X-Box</a><br>
+		<a href="/platform/pc"style="color: black;">2. PC</a><br>
+		<a href="/platform/wii"style="color: black;">3. Wii</a><br>
 	</fieldset>
   	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	<fieldset class="fieldset-auto-width" style="background:palevioletred;opacity: 0.6;width: 25%;">
 	    <a href="categorizedbybestseller.html" style="font-size: 20px;color:black;">Best-seller:</a><br>
-		<a href="gamea.html"style="color: black;">1. Game a</a><br>
-		<a href="gameb.html"style="color: black;">2. Game b</a><br>
-		<a href="gamec.html"style="color: black;">3. Game c</a><br>
+		<a href="/game/halo2"style="color: black;">1. Halo 2</a><br>
+		<a href="/game/TomClancysSplinterCell"style="color: black;">2. Tom Clancy's Splinter Cell</a><br>
+		<a href="/game/Fable"style="color: black;">3. Fable</a><br>
 	</fieldset>
 </fieldset>
 </div>

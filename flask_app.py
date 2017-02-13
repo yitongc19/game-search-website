@@ -20,9 +20,9 @@ app = flask.Flask(__name__)
 def homepage():
     return render_template("Home.html")
 
-@app.route('/search_result/<search_key>')
-def searchResult(search_key):
-    result_list = api.get_search_by_name(search_key)
+@app.route('/search_result/<myname>')
+def searchResult(myname):
+    result_list = api.get_search_by_name(myname)
     return render_template("Search_result.html", game_list=result_list)
 
 @app.route('/account_home/')

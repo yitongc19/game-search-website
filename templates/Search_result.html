@@ -33,10 +33,7 @@
         <li><a href="/{{ game.getValue("name")}}/{{ game.getValue("platform")}}">{{ game.getValue("name") }}</a>
         &nbsp&nbsp&nbsp&nbsp{{ game.getValue("publisher")}}
         <br><p id="info">Genre: {{ game.getValue("genre")}} &nbsp&nbsp&nbsp Platform:{{ game.getValue("platform") }}</p></li>
-        <li><a href="game2.html">Game2</a>&nbsp&nbsp&nbsp&nbspDeveloper
-        <br><p id="info">General Info</p></li>
-        <li><a href="game3.html">Game3</a>&nbsp&nbsp&nbsp&nbspDeveloper
-        <br><p id="info">General Info</p></li>
+        {% endfor %}
     </ul>
 </div>
 {% endblock %}
