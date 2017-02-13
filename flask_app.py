@@ -11,6 +11,7 @@ import flask
 from flask import render_template
 import json
 import sys
+import api
 
 app = flask.Flask(__name__)
 
@@ -19,9 +20,10 @@ app = flask.Flask(__name__)
 def homepage():
     return render_template("Home.html")
 
-@app.route('/search_result/')
-def searchResult():
-    return render_template("Search_result.html")
+@app.route('/search_result/<search_key>')
+def searchResult(search_key):
+    result_list = api.get_search_by_name(search_key)
+    return render_template("Search_result.html", game_list=result_list)
 
 @app.route('/account_home/')
 def accountHome():
@@ -43,9 +45,9 @@ def signup():
 def changeEmail():
     return render_template('changeEmail.html')
 
-@app.route('/game/')
-def product():
-    return render_template('product.html')
+@app.route('/game/<game_name>/')
+def product(game_name):
+    return render_template('product.html', game_name=game_name)
 
 
 
