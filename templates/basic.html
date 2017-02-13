@@ -14,6 +14,8 @@
             {%  block stylesheet %}
             <link rel="stylesheet" href="{{ url_for('static', filename='basic.css')}}">
             {% endblock %}
+            {% block javascript %}
+            {% endblock %}
             <!--The functions including log-in and search-->
             {% block functions %}
             <div id="functions_container">

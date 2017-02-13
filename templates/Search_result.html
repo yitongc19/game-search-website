@@ -7,6 +7,7 @@
 {% block stylesheet %}
 <link rel="stylesheet" href="{{ url_for('static', filename='basic.css')}}" type="text/css" media="screen">
 <link rel="stylesheet" href="{{ url_for('static', filename='stylesheet_search_result.css')}}" type="text/css" media="screen">
+<script type="text/javascript" src="Home.js"></script>
 {% endblock %}
 
 {% block content %}
@@ -28,12 +29,11 @@
 <div id="search_result">
     <h2>Search Result(# results found)</h2>
     <ul id="result">
-        <li><a href="game1.html">Game1</a>&nbsp&nbsp&nbsp&nbspDeveloper
-        <br><p id="info">General Info</p></li>
-        <li><a href="game2.html">Game2</a>&nbsp&nbsp&nbsp&nbspDeveloper
-        <br><p id="info">General Info</p></li>
-        <li><a href="game3.html">Game3</a>&nbsp&nbsp&nbsp&nbspDeveloper
-        <br><p id="info">General Info</p></li>
+        {%  for game in game_list %}
+        <li><a href="/{{ game.getValue("name")}}/{{ game.getValue("platform")}}">{{ game.getValue("name") }}</a>
+        &nbsp&nbsp&nbsp&nbsp{{ game.getValue("publisher")}}
+        <br><p id="info">Genre: {{ game.getValue("genre")}} &nbsp&nbsp&nbsp Platform:{{ game.getValue("platform") }}</p></li>
+        {% endfor %}
     </ul>
 </div>
 {% endblock %}
