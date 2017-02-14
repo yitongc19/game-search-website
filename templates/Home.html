@@ -10,6 +10,7 @@
 {% endblock %}
 
 {% block javascript %}
+    <script type="text/javascript" src="{{ url_for('static', filename='Home.js')}}"></script>
 {% endblock %}
 
 {% block function %}
@@ -52,7 +53,7 @@
         border-radius: 7%"></a>
         <a href="/MetalGearSolid/"><img class="mySlides" src="{{ url_for('static', filename='pokemon.jpg')}}" style="width: 100%; -webkit-border-radius: ;-moz-border-radius: ;
         border-radius: 7%"></a>
-        <a href="ResidentEvil4/"><img class="mySlides" src="{{ url_for('static', filename='wii.jpg')}}" style="width: 100%; -webkit-border-radius: ;-moz-border-radius: ;
+        <a href="/ResidentEvil4/"><img class="mySlides" src="{{ url_for('static', filename='wii.jpg')}}" style="width: 100%; -webkit-border-radius: ;-moz-border-radius: ;
         border-radius: 7%"></a></div>
     </div>
 
