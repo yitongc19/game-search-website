@@ -14,7 +14,7 @@ import sys
 import api
 
 app = flask.Flask(__name__)
-
+app.config['DEBUG'] = True
 
 @app.route('/')
 def homepage():
@@ -58,4 +58,4 @@ if __name__ == '__main__':
 
     host = sys.argv[1]
     port = sys.argv[2]
-    app.run(host=host, port=port)
+    app.run(host=host, port=int(port))
