@@ -94,7 +94,7 @@ def get_search_by_name(myname):
     connection.close()
     return gameList
 
-@app.route('/search/publisher/<publisher>')
+@app.route('/search/publisher/<mypublisher>')
 def get_search_by_publisher(mypublisher):
     """ Return a list of dictionaries that by the same publisher, each of which describes
     one videogame with keys 'name', 'platform', 'yearofrelease', 'genre', '

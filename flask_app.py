@@ -20,10 +20,15 @@ app = flask.Flask(__name__)
 def homepage():
     return render_template("Home.html")
 
-@app.route('/search_result/<myname>')
-def searchResult(myname):
+@app.route('/search_result/name/<myname>')
+def searchResultbyName(myname):
     result_list = api.get_search_by_name(myname)
     return render_template("Search_result.html", game_list=result_list)
+    
+@app.route('/search_result/publisher/<mypublisher>')
+def searchResultbyPublisher(mypublisher):
+    result_list = api.get_search_by_publisher(mypublisher)
+    return render_template("Search_result.html", game_list=result_list)    
 
 @app.route('/account_home/')
 def accountHome():
