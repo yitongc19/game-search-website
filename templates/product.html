@@ -1,7 +1,7 @@
 {% extends "basic.html" %}
 
 {% block title %}
-<title> Game! </title>
+<title> {{ target_game.name }} </title>
 {% endblock %}
 
 {% block stylesheet %}\
@@ -11,19 +11,20 @@
 
 {% block content %}
     <div id="main_content">
-        <h1>Game title</h1>
+        <h1>{{ target_game.name }}</h1>
         <ul id="product_info">
-            <li>Supported Platform:</li>
-            <li>Year of Release:</li>
-            <li>Genre:</li>
-            <li>Publisher:</li>
-            <li>Sale Record worldwide:</li>
-            <li>Critique Score:
-            <br><p id="score_count">（num of critiques:)</p> </li>
-            <li>User Score:
-            <br><p id="score_count"> (num of users:)</p></li>
-            <li>Developer Info: </li>
-            <li>ESBR Rating: </li>
+            <li>Supported Platform:{{ target_game.platform }}</li>
+            <li>Year of Release:{{ target_game.year_of_release }}</li>
+            <li>Genre:{{ target_game.genre }}</li>
+            <li>Publisher:{{ target_game.publisher }}</li>
+            <li>Sale Record worldwide: North America-{{ target_game.NA_sales }}, Europe-{{ target_game.EU_sales }},
+            Japan-{{ target_game.JP_sales }}, Other Places-{{ target_game.Other_sales }}</li>
+            <li>Critique Score: {{ target_game.critic_score }}
+            <br><p id="score_count">（num of critiques:{{ target_game.critic_count }})</p> </li>
+            <li>User Score: {{ target_game.user_score }}
+            <br><p id="score_count"> (num of users:{{ target_game.user_count }})</p></li>
+            <li>Developer Info: {{ target_game.developer }} </li>
+            <li>ESBR Rating: {{ target_game.rating }} </li>
         </ul>
     </div>
 

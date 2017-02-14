@@ -18,3 +18,4 @@ function getSearchInput(){
 
 /*Question:
 use window.location.host or localhost:5000
+    */

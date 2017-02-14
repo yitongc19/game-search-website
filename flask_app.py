@@ -50,9 +50,14 @@ def signup():
 def changeEmail():
     return render_template('changeEmail.html')
 
-@app.route('/game/<game_name>/')
-def product(game_name):
-    return render_template('product.html', game_name=game_name)
+@app.route('/game/<game_name>/<game_platform>')
+def product(game_name, game_platform):
+    game_info = api.get_display_by_name(game_name)
+    target_game = {}
+    for game in game_info:
+        if game.getValue(platform) == game_platform:
+            target_game = game
+    return render_template('product.html', target_game=target_game)
 
 
 
