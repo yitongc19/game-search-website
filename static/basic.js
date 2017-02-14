@@ -3,6 +3,6 @@
 
  */
 
-function onLoginButton() {
-    window.location = "/login/";
+var onLoginButton=function () {
+    window.location
 }
