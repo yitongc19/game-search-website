@@ -30,9 +30,9 @@ def searchResultbyPublisher(mypublisher):
     result_list = api.get_search_by_publisher(mypublisher)
     return render_template("Search_result.html", game_list=result_list)    
 
-@app.route('/account_home/')
-def accountHome():
-    return render_template('accountHome.html')
+@app.route('/account_home/<account_name>')
+def accountHome(account_name):
+    return render_template('accountHome.html', account_name=account_name)
 
 @app.route('/browse/')
 def browse():
