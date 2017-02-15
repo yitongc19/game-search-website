@@ -121,8 +121,8 @@ def get_search_by_name(myname):
         exit()
     try:
         cursor = connection.cursor()
-        query = "SELECT * FROM video_game WHERE name LIKE %s"
-        cursor.execute(query, ("%"+myname+"%",))
+        query = "SELECT * FROM video_game WHERE lower(name) LIKE %s"
+        cursor.execute(query, ("%"+myname.lower()+"%",))
 
     except Exception as e:
         print('Cursor error: {}'.format(e))
@@ -165,9 +165,15 @@ def get_search_by_name(myname):
     return gameList
 
 """
+<<<<<<< HEAD
 @app.route('/user/change_your_email/<account_name>')
 def change_your_email(oldemail, newemail):
     
+=======
+@app.route('/user/change_your_email/<new_email>')
+def change_your_email(oldemail, newemail):
+
+>>>>>>> 8dc791a7182a696f9fa90321010e224435f50f04
     :param oldemail (String):
     :param newemail (String):
 
@@ -175,7 +181,11 @@ def change_your_email(oldemail, newemail):
     Invalid input will return an empty string.
 
     Example: http://videogamessales/change_your_email/cheny2@carleton.edu
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> 8dc791a7182a696f9fa90321010e224435f50f04
 
 
 if re.match(r"[^@]+@[^@]+\.[^@]+", newemail) == None:
