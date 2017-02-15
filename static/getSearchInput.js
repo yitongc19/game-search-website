@@ -1,5 +1,6 @@
-function getSearchInput(){    
-    var radios = document.getElementByName("search_criteria");
+/*
+function getSearchInput(){
+    var radios = document.getElementById("search_criteria");
     var checkedCriteria;
     for (var i = 0, length = radios.length; i<length; i++){
         if (radios[i].checked){
@@ -15,7 +16,7 @@ function getSearchInput(){
     }
     window.location = url;
 }
-
+*/
 /*Question:
 use window.location.host or localhost:5000
     */
