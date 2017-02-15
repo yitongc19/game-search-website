@@ -24,11 +24,11 @@ def homepage():
 def searchResultbyName(search_key):
     result_list = api.get_search_by_name(search_key)
     return render_template("Search_result.html", game_list=result_list)
-    
-@app.route('/search_result/publisher/<mypublisher>')
-def searchResultbyPublisher(mypublisher):
-    result_list = api.get_search_by_publisher(mypublisher)
-    return render_template("Search_result.html", game_list=result_list)    
+
+@app.route('/search_result/publisher/<search_key>')
+def searchResultbyPublisher(search_key):
+    result_list = api.get_search_by_publisher(search_key)
+    return render_template("Search_result.html", game_list=result_list)
 
 @app.route('/account_home/<account_name>')
 def accountHome(account_name):
