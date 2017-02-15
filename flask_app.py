@@ -34,9 +34,20 @@ def searchResultbyPublisher(search_key):
 def accountHome(account_name):
     return render_template('accountHome.html', account_name=account_name)
 
-@app.route('/browse/')
-def browse():
-    return render_template('browse.html')
+@app.route('/browse/genre/<browse_key>')
+def browse_by_genre(browse_key):
+    result_list = api.get_display_by_genre(browse_key)
+    return render_template('browse.html', browse_key=browse_key, result_list=result_list)
+
+@app.route('/browse/platform/<browse_key>')
+def browse_by_platform(browse_key):
+    result_list = api.get_display_by_platform(browse_key)
+    return render_template('browse.html', browse_key=browse_key, result_list=result_list)
+
+@app.route('/browse/publisher/<browse_key>')
+def browse_by_publisher(browse_key):
+    result_list = api.get_display_by_publisher(browse_key)
+    return render_template('browse.html', browse_key=browse_key, result_list=result_list)
 
 @app.route('/login/')
 def login():
@@ -55,7 +66,7 @@ def product(game_name, game_platform):
     game_info = api.get_display_by_name(game_name)
     target_game = {}
     for game in game_info:
-        if game.getValue(platform) == game_platform:
+        if game.getValue("platform") == game_platform:
             target_game = game
     return render_template('product.html', target_game=target_game)
 
