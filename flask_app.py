@@ -66,7 +66,7 @@ def product(game_name, game_platform):
     game_info = api.get_display_by_name(game_name)
     target_game = {}
     for game in game_info:
-        if game.getValue("platform") == game_platform:
+        if game['platform'] == game_platform:
             target_game = game
     return render_template('product.html', target_game=target_game)
 

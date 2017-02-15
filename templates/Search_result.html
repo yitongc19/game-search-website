@@ -30,7 +30,7 @@
     </fieldset>
 </div>
 <div id="search_result">
-    <h2>Search Result({{ game_list.__len__ }} results found)</h2>
+    <h2>Search Result( {{ game_list|length }} results found)</h2>
     <ul id="result">
         {%  for game in game_list %}
         <li><a href="/{{ game.name}}/{{ game.platform}}">{{ game.name}}</a>
