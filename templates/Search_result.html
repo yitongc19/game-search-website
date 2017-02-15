@@ -33,7 +33,7 @@
     <h2>Search Result( {{ game_list|length }} results found)</h2>
     <ul id="result">
         {%  for game in game_list %}
-        <li><a href="/{{ game.name}}/{{ game.platform}}">{{ game.name}}</a>
+        <li><a href="{{ url_for('product', game_name = game.name, game_platform = game.platform)}}">{{ game.name}}</a>
         &nbsp&nbsp&nbsp&nbsp{{ game.publisher}}
         <br><p id="info">Genre: {{ game.genre}} &nbsp&nbsp&nbsp Platform:{{game.platform}}</p></li>
         {% endfor %}
