@@ -121,8 +121,8 @@ def get_search_by_name(myname):
         exit()
     try:
         cursor = connection.cursor()
-        query = "SELECT * FROM video_game WHERE name LIKE %s"
-        cursor.execute(query, ("%"+myname+"%",))
+        query = "SELECT * FROM video_game WHERE lower(name) LIKE %s"
+        cursor.execute(query, ("%"+myname.lower()+"%",))
 
     except Exception as e:
         print('Cursor error: {}'.format(e))
