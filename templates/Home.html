@@ -13,11 +13,6 @@
     <script type="text/javascript" src="{{ url_for('static', filename='Home.js')}}"></script>
     <script type="text/javascript">
         var search_result_url = "{{ url_for('searchResultbyName', search_key='NOTAKEY')}}";
-        function getSearchResult(){
-            document.getElementById("search_keyword").value;
-            var result_url = search_result_url.replace('NOTAKEY', 'Fable');
-            window.location = result_url;
-        }
     </script>
 {% endblock %}
 
