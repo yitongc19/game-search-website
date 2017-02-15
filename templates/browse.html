@@ -1,7 +1,7 @@
 {% extends "basic.html" %}
 
 {% block title %}
-<title> Browsing </title>
+<title> {{ browse_key }} </title>
 {% endblock %}
 
 {% block stylesheet %}
@@ -11,18 +11,13 @@
 
 {% block content %}
     <div id="content">
-        <h1><u>Page Name</u></h1>
+        <h1><u>{{ browse_key }}</u></h1>
         <!--Display the games-->
         <ul id="games">
-            <li><a href="#game1" id="games">game1</a></li><br>
-            <li><a href="#game2" id="games">game2</a></li><br>
-            <li><a href="#game3" id="games">game3</a></li><br>
-            <li><a href="#game4" id="games">game4</a></li><br>
-            <li><a href="#game5" id="games">game5</a></li><br>
-            <li><a href="#game6" id="games">game6</a></li><br>
-            <li><a href="#game7" id="games">game7</a></li><br>
-            <li><a href="#game8" id="games">game8</a></li><br>
-            <li><a href="#game9" id="games">game9</a></li><br>
+            {%  for game in result_list %}
+                <li><a href="{{ url_for('product', game_name=game.name, game_platform=game.platform)}}">
+                    {{ game.name}}</a></li><br>
+            {% endfor %}
         </ul>
     </div>
 {% endblock %}

@@ -36,18 +36,18 @@
             {% block global_navigation %}
             <div id="global_nav">
                 <ul id="nav">
-                    <li id="cat"><a href="{{ url_for('browse_by_genre', {'browse_key' : 'Sports'})}}">Sports</a></li>
-                    <li id="cat"><a href="{{ url_for('browse_by_genre', {'browse_key' : 'Platform'})}}">Platform</a></li>
-                    <li id="cat"><a href="{{ url_for('browse_by_genre', {'browse_key' : 'Racing'})}}">Racing</a></li>
-                    <li id="cat"><a href="{{ url_for('browse_by_genre', {'browse_key' : 'Role-Playing'})}}">Role-Playing</a></li>
-                    <li id="cat"><a href="{{ url_for('browse_by_genre', {'browse_key' : 'Puzzle'})}}">Puzzle</a></li>
-                    <li id="cat"><a href="{{ url_for('browse_by_genre', {'browse_key' : 'Misc'})}}">Misc</a></li>
-                    <li id="cat"><a href="{{ url_for('browse_by_genre', {'browse_key' : 'Shooter'})}}">Shooter</a></li>
-                    <li id="cat"><a href="{{ url_for('browse_by_genre', {'browse_key' : 'Simulation'})}}">Simulation</a></li>
-                    <li id="cat"><a href="{{ url_for('browse_by_genre', {'browse_key' : 'Fighting'})}}">Fighting</a></li>
-                    <li id="cat"><a href="{{ url_for('browse_by_genre', {'browse_key' : 'Adventure'})}}">Adventure</a></li>
-                    <li id="cat"><a href="{{ url_for('browse_by_genre', {'browse_key' : 'Strategy'})}}">Strategy</a></li>
-                    <li id="cat"><a href="{{ url_for('browse_by_genre', {'browse_key' : 'Action'})}}">Action</a></li>
+                    <li id="cat"><a href="{{ url_for('browse_by_genre', browse_key = 'Sports')}}">Sports</a></li>
+                    <li id="cat"><a href="{{ url_for('browse_by_genre', browse_key = 'Platform')}}">Platform</a></li>
+                    <li id="cat"><a href="{{ url_for('browse_by_genre', browse_key = 'Racing')}}">Racing</a></li>
+                    <li id="cat"><a href="{{ url_for('browse_by_genre', browse_key = 'Role-Playing')}}">Role-Playing</a></li>
+                    <li id="cat"><a href="{{ url_for('browse_by_genre', browse_key = 'Puzzle')}}">Puzzle</a></li>
+                    <li id="cat"><a href="{{ url_for('browse_by_genre', browse_key = 'Misc')}}">Misc</a></li>
+                    <li id="cat"><a href="{{ url_for('browse_by_genre', browse_key = 'Shooter')}}">Shooter</a></li>
+                    <li id="cat"><a href="{{ url_for('browse_by_genre', browse_key = 'Simulation')}}">Simulation</a></li>
+                    <li id="cat"><a href="{{ url_for('browse_by_genre', browse_key = 'Fighting')}}">Fighting</a></li>
+                    <li id="cat"><a href="{{ url_for('browse_by_genre', browse_key = 'Adventure')}}">Adventure</a></li>
+                    <li id="cat"><a href="{{ url_for('browse_by_genre', browse_key = 'Strategy'))}}">Strategy</a></li>
+                    <li id="cat"><a href="{{ url_for('browse_by_genre', browse_key = 'Action')}}">Action</a></li>
                 </ul>
             </div>
             {% endblock %}
