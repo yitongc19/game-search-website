@@ -164,10 +164,10 @@ def get_search_by_name(myname):
     connection.close()
     return gameList
 
-
+"""
 @app.route('/user/change_your_email/<new_email>')
 def change_your_email(oldemail, newemail):
-    """
+
     :param oldemail (String):
     :param newemail (String):
 
@@ -175,7 +175,7 @@ def change_your_email(oldemail, newemail):
     Invalid input will return an empty string.
 
     Example: http://videogamessales/change_your_email/cheny2@carleton.edu
-    """
+
 
 
 if re.match(r"[^@]+@[^@]+\.[^@]+", newemail) == None:
@@ -206,7 +206,7 @@ except Exception as e:
     exit()
 
 accountconnection.close()
-
+"""
 @app.route('/search/publisher/<mypublisher>')
 def get_search_by_publisher(mypublisher):
     """ Return a list of dictionaries that by the same publisher, each of which describes
