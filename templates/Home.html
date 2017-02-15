@@ -10,13 +10,13 @@
 {% endblock %}
 
 {% block javascript %}
-    <script type="text/javascript" src="{{ url_for('static', filename='getSearchInput.js')}}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='Home.js')}}"></script>
 {% endblock %}
 
 {% block function %}
 <div id="fuctions">
                 <div id="login">
-                    <form action="User_login.html">
+                    <form action="{{ url_for("login")}}">
                         <button type="submit" value="Log In">Log In</button>
                     </form>
                 </div>
@@ -93,11 +93,14 @@
 <div id="main_search">
 <fieldset>
     <legend> Find What You Want: </legend>
-	<input id="search" type="text" name="search" value=""
+	<input id="search" type="text" name="search"
 	style="width:90%;height: 40px;border-radius: 8px;opacity: 0.6; font-size: 20px;">
-	<button onclick="getSearchInput()" type="submit"
+	<button onclick="getSearchResult()" type="submit"
 	style="width: 47px;height: 40px;border-radius: 5px;background: white; float: right; opacity: 0.9;"> 🔍</button>
 	<br><br>
+    <script type="text/javascript">
+        var search_result_urlTemplate = "{{ url_for('searchResultbyName', search_key='notakey')}}";
+    </script>
     <form action="">
     <input type="radio" name="search_criteria" value="search_by_name"> Search By Name
     <input type="radio" name="search_criteria" value="search_by_genre"> Search By Publisher

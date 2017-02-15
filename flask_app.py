@@ -20,9 +20,9 @@ app.config['DEBUG'] = True
 def homepage():
     return render_template("Home.html")
 
-@app.route('/search_result/name/<myname>')
-def searchResultbyName(myname):
-    result_list = api.get_search_by_name(myname)
+@app.route('/search_result/name/<search_key>')
+def searchResultbyName(search_key):
+    result_list = api.get_search_by_name(search_key)
     return render_template("Search_result.html", game_list=result_list)
     
 @app.route('/search_result/publisher/<mypublisher>')
