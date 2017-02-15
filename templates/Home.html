@@ -93,13 +93,13 @@
 <div id="main_search">
 <fieldset>
     <legend> Find What You Want: </legend>
-	<input id="search" type="text"
+	<input id="search_keyword" type="text"
 	style="width:90%;height: 40px;border-radius: 8px;opacity: 0.6; font-size: 20px;">
 	<button onclick="getSearchResult()"
 	style="width: 47px;height: 40px;border-radius: 5px;background: white; float: right; opacity: 0.9;"> 🔍</button>
 	<br><br>
     <script type="text/javascript">
-        var search_result_urlTemplate = "{{ url_for('searchResultbyName', search_key='notakey')}}";
+        var search_result_url = "{{ url_for('searchResultbyName', search_key='NOTAKEY')}}";
     </script>
     <form action="">
     <input type="radio" name="search_criteria" value="search_by_name"> Search By Name
