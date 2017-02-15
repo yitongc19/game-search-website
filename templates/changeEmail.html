@@ -9,6 +9,9 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='stylesheet_changeEmail.css')}}">
 {% endblock %}
 
+{% block javascript %}
+<script type="text/javascript" src="{{ url_for('static',filename='changeEmail.js')}}"></script>
+
 {% block functions %}
 {% endblock %}
 
@@ -20,25 +23,20 @@
 <h2> <u> Change Your Email Address </u></h2>
 <section id="change_email">
     <p>Please enter your user name:
-    <input type="text" value=""><br>
+    <input type="text"><br>
     </p>
     <p> Please enter your password:
-    <input type="text" value=""><br>
+    <input type="password"><br>
     </p>
     <p> Please enter your new email address:
-    <input type="text" value="" style="width:175px"><br>
+    <input id="new_email" type="text" style="width:175px"><br>
     </p>
     <p> Re-enter the new email address:
-    <input type="text" value="" style="width:175px"> </p>
-    <form action="Account_home.html">
-        <button onclick="myFunction()">Submit</button>
-        <script>
-            function myFunction() {
-                confirm("Your email has been successfully updated!" +
-                "\nClick 'OK' and you will be taken back to your account page!");
-            }
-        </script>
-    </form>
+    <input type="text" style="width:175px"> </p>
+    <button onclick="confirmChange()">Submit</button>
+    <script type="text/javascript">
+        var account_with_new_email = "{{ url_for('accountHome', account_name='NOTANAME')}}"
+    </script>
 </section>
 </div>
 {% endblock %}
