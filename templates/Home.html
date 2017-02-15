@@ -12,6 +12,7 @@
 {% block javascript %}
     <script type="text/javascript" src="{{ url_for('static', filename='Home.js')}}"></script>
     <script type="text/javascript">
+        function getSearchResult() {
             var radios = document.getElementById("search_criteria");
             var checkedCriteria;
             for (var i = 0, length = radios.length; i<length; i++){
@@ -27,11 +28,12 @@
                 search_result_url = "{{ url_for('searchResultbyPublisher', search_key='NOTAKEY')}}";
             }
 
-            //var search_input = document.getElementById("search_keyword");
+            var search_input = document.getElementById("search_keyword");
 
-            //var result_url = search_result_url.replace('NOTAKEY', search_input.value);
+            var result_url = search_result_url.replace('NOTAKEY', search_input.value);
 
-            //window.location = result_url;
+            window.location = result_url;
+        }
         </script>
 {% endblock %}
 
