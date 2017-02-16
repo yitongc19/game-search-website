@@ -311,7 +311,7 @@ def get_display_by_publisher(mypublisher):
     try:
         cursor = connection.cursor()
         query = "SELECT name, platform FROM video_game WHERE lower(publisher)=%s"
-        cursor.execute(query, mypublisher.lower(),)
+        cursor.execute(query, (mypublisher.lower(),))
 
     except Exception as e:
         print('Cursor error: {}'.format(e))
