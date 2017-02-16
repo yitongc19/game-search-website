@@ -13,7 +13,7 @@
     <script type="text/javascript" src="{{ url_for('static', filename='Home.js')}}"></script>
     <script type="text/javascript">
         function getSearchResult() {
-            var radios = document.getElementById("search_criteria");
+            var radios = document.getElementsByName("search_criteria");
             var checkedCriteria;
             for (var i = 0, length = radios.length; i<length; i++){
                 if (radios[i].checked){
@@ -123,8 +123,8 @@
 	style="width: 47px;height: 40px;border-radius: 5px;background: white; float: right; opacity: 0.9;"> 🔍</button>
 	<br><br>
     <form action="">
-    <input type="radio" id="search_criteria" value="search_by_name"> Search By Name
-    <input type="radio" id="search_criteria" value="search_by_genre"> Search By Publisher
+    <input type="radio" name="search_criteria" value="search_by_name"> Search By Name
+    <input type="radio" name="search_criteria" value="search_by_genre"> Search By Publisher
 
 </form>
 </fieldset>
