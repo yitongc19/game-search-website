@@ -1,0 +1,9 @@
+footer{
+    position: relative;
+}
+
+#high_rating a{
+    color: saddlebrown;
+    font-size: 25px;
+    columns: 3;
+}

@@ -1,0 +1,9 @@
+footer{
+    position: relative;
+}
+
+#best_seller a{
+    color: saddlebrown;
+    font-size: 25px;
+    columns: 3;
+}

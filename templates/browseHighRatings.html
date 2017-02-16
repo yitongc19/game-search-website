@@ -1,0 +1,22 @@
+{% extends "basic.html" %}
+
+{% block title %}
+<title> Highest Rating Games </title>
+{% endblock %}
+
+{% block stylesheet %}
+<link rel="stylesheet" href="{{ url_for('static', filename='basic.css')}}">
+<link rel="stylesheet" href="{{ url_for('static', filename='stylesheet_highRating.css')}}">
+{% endblock %}
+
+{% block content %}
+<div id="content">
+    <h2> Highest Rating Games </h2>
+    <ul id="high_rating">
+        {%  for game in result_list %}
+        <li><a id="high_rating" href="{{ url_for('product', game_name = game.name, game_platform=game.platform)}}">
+            {{ game.name }}</a></li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
