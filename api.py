@@ -737,10 +737,10 @@ def getHighRatings():
     
     for row in cursor:
         if row.get("User_Score")!= 'tbd':
-        	gamedic = {}
+            gamedic = {}
             myname, myplatform = row
             gamedic["platform"] = myplatform
-        	gamedic["name"] = myname
+            gamedic["name"] = myname
             gameList.append(gamedic)
     
     return gameList[:100]
@@ -768,11 +768,11 @@ def getHighSaleRecord():
     gameList = []
     
     for row in cursor:
-        	gamedic = {}
-            myname, myplatform = row
-            gamedic["platform"] = myplatform
-        	gamedic["name"] = myname
-            gameList.append(gamedic)
+        gamedic = {}
+        myname, myplatform = row
+        gamedic["platform"] = myplatform
+        gamedic["name"] = myname
+        gameList.append(gamedic)
     
     return gameList[:100]
 
