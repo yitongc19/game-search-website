@@ -735,7 +735,7 @@ def getHighRatings():
 
     try:
         cursor = connection.cursor()
-        query = "SELECT name FROM video_game ORDER BY User_Score"
+        query = "SELECT name, platform FROM video_game ORDER BY User_Score"
         cursor.execute(query)
 
     except Exception as e:
@@ -747,8 +747,42 @@ def getHighRatings():
     
     for row in cursor:
         if row.get("User_Score")!= 'tbd':
-            mygame = row.get("Name")
-            gameList.append(mygame)
+        	gamedic = {}
+            myname, myplatform = row
+            gamedic["platform"] = myplatform
+        	gamedic["name"] = myname
+            gameList.append(gamedic)
+    
+    return gameList[:100]
+    
+def getHighSaleRecord():
+    """
+    Return the first 100 games with the highest sale records.
+    """
+    try:
+        connection = psycopg2.connect(database=database, user=user, password=password)
+    except Exception as e:
+        print(e)
+        exit()
+
+    try:
+        cursor = connection.cursor()
+        query = "SELECT name, platform FROM video_game ORDER BY Global_Sales NULLS LAST"
+        cursor.execute(query)
+
+    except Exception as e:
+        print('Cursor error: {}'.format(e))
+        connection.close()
+        exit()
+
+    gameList = []
+    
+    for row in cursor:
+        	gamedic = {}
+            myname, myplatform = row
+            gamedic["platform"] = myplatform
+        	gamedic["name"] = myname
+            gameList.append(gamedic)
     
     return gameList[:100]
 
