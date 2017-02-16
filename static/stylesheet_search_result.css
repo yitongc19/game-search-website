@@ -13,6 +13,11 @@ a{
     font-size: 22px;
 }
 
+#cat{
+    text-decoration: none;
+    font-size: 25px;
+}
+
 li{
     color: #404040;
 }
@@ -21,4 +26,8 @@ p{
     text-indent: 1cm;
     font-size: 18px;
     color:black;
+}
+
+footer{
+    position: relative;
 }

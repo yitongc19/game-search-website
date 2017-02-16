@@ -37,7 +37,11 @@ def accountHome(account_name):
 @app.route('/browse/genre/<browse_key>')
 def browse_by_genre(browse_key):
     result_list = api.get_display_by_genre(browse_key)
-    result_list = result_list[90:]
+
+    for result in result_list:
+        if result['name'] is None:
+            result['name'] = ""
+
     return render_template('browse.html', browse_key=browse_key, result_list=result_list)
 
 @app.route('/browse/platform/<browse_key>')
@@ -58,9 +62,11 @@ def login():
 def signup():
     return render_template('signup.html')
 
+'''
 @app.route('/change_your_email/')
 def changeEmail():
     return render_template('changeEmail.html')
+'''
 
 @app.route('/game/<game_name>/<game_platform>')
 def product(game_name, game_platform):
@@ -71,6 +77,11 @@ def product(game_name, game_platform):
             target_game = game
     return render_template('product.html', target_game=target_game)
 
+#generic search method
+@app.route('/search/<generic_search_key>')
+def genericSearch(search_key):
+    name_result_list = api.get_search_by_name(search_key)
+    return render_template("Search_result.html", game_list=result_list)
 
 
 if __name__ == '__main__':
