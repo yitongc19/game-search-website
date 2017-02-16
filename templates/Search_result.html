@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='stylesheet_search_result.css')}}" type="text/css" media="screen">
 {% endblock %}
 
-{% block javascript %}
+{% block extra_javascript %}
     <script type="text/javascript" src="{{ url_for('static', filename='Home.js')}}"></script>
     <script type="text/javascript">
         function getSearchResult() {
@@ -28,7 +28,7 @@
                 search_result_url = "{{ url_for('searchResultbyPublisher', search_key='NOTAKEY')}}";
             }
 
-            var search_input = document.getElementById("search_key");
+            var search_input = document.getElementById("search_keyword");
 
             var result_url = search_result_url.replace('NOTAKEY', search_input.value);
 
@@ -42,7 +42,7 @@
 <div id="search_again">
     <fieldset>
         <legend>Search Again</legend>
-        <input id="search_key" type="text" name="search" value="" style="width:90%;height: 40px;border-radius: 8px;opacity: 0.6;
+        <input id="search_keyword" type="text" name="search" value="" style="width:90%;height: 40px;border-radius: 8px;opacity: 0.6;
         font-size: 20px;">
 	    <button onclick="getSearchResult()" type="submit" style="width: 47px;height: 40px;border-radius: 5px;background: white; float: right;
         opacity: 0.9;"> 🔍</button>

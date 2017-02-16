@@ -5,11 +5,11 @@
 {% endblock %}
 
 {% block stylesheet %}
-<link rel="stylesheet" href="{{ url_for('static', filename='basic.css')}}">
+<link rel="stylesheet" href="{{ url_for('static', filename='basic.css')}}" type="text/css" media="screen">
 <link rel="stylesheet" href="{{ url_for('static', filename='homepagestylesheet.css')}}">
 {% endblock %}
 
-{% block javascript %}
+{% block extra_javascript %}
     <script type="text/javascript" src="{{ url_for('static', filename='Home.js')}}"></script>
     <script type="text/javascript">
         function getSearchResult() {
