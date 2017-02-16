@@ -54,6 +54,29 @@ def browse_by_publisher(browse_key):
     result_list = api.get_display_by_publisher(browse_key)
     return render_template('browse.html', browse_key=browse_key, result_list=result_list)
 
+
+@app.route('/browseAllPublishers/')
+def browse_all_publishers():
+    result_list = api.getAllPublisher()
+    return render_template('browseAllPublishers.html', result_list=result_list)
+
+"""
+@app.route('/browseAllPlatforms/')
+def browse_all_platforms():
+    result_list = api.getAllPlatforms()
+    return render_template('browseAllPlatforms.html', result_list=result_list)
+
+@app.route('/browseHighestRating/')
+def browse_highest_rating():
+    result_list = api.getHighRatings()
+    return render_template('browseHighRatings.html', result_list=result_list)
+
+@app.route('/browseBestSellers/')
+def browse_best_sellers():
+    result_list = api.getBestSellers()
+    return render_template('browseBestSellers.html', result_list=result_list)
+"""
+
 @app.route('/login/')
 def login():
     return render_template('login.html')

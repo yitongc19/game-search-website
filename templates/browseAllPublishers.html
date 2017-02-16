@@ -1,0 +1,21 @@
+{% extends "basic.html" %}
+
+{% block title %}
+<title> All Publishers </title>
+{% endblock %}
+
+{% block stylesheet %}
+<link rel="stylesheet" href="{{ url_for('static', filename='basic.css')}}">
+<link rel="stylesheet" href="{{ url_for('static', filename='stylesheet_allPublishers.css')}}">
+{% endblock %}
+
+{% block content %}
+<div id="content">
+    <h2> All Publishers </h2>
+    <ul id="publishers">
+        {%  for publisher in result_list %}
+        <li><a id="publisher" href="{{ url_for('browse_by_publisher', browse_key=publisher)}}">{{ publisher }}</a></li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

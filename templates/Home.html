@@ -137,7 +137,8 @@
 <!--Other recommended, high rating games-->
 <div id="otherRec">
 <fieldset id="other_recommended">
-    <legend><a href="recommended.html" style="color: black; font-size: 20px;">Other Recommendations:</a><br></legend>
+    <legend><a href="{{ url_for('browse_highest_rating')}}" style="color: black; font-size: 20px;">
+        Other Recommendations:</a><br></legend>
   	<a href="{{ url_for('product', game_name="The Witcher 3: Wild Hunt", game_platform="PC")}}">
         <img class="myrecommended" src="{{ url_for('static', filename='Other_Rec1.jpg')}}" alt=""/></a>
   	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -155,21 +156,21 @@
 <fieldset id="categorized_by">
     <legend>Categorized by:</legend>
 	<br><fieldset class="fieldset-auto-width" style="background:cornflowerblue;opacity: 0.6;width: 25%;">
-		<a href="categorizedbypublisher.html" style="font-size: 20px;color:black;">Publisher:</a><br>
+		<a href="{{ url_for('browse_all_publishers')}}" style="font-size: 20px;color:black;">Publisher:</a><br>
 		<a href="{{ url_for('browse_by_publisher', browse_key="Activision")}}" style="color: black;">1. Activision</a><br>
 		<a href="{{ url_for('browse_by_publisher', browse_key="505 Games")}}"style="color: black;">2. 505 Games</a><br>
 		<a href="{{ url_for('browse_by_publisher', browse_key="Nintendo")}}"style="color: black;">3. Nintendo</a><br>
 	</fieldset>
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	<fieldset class="fieldset-auto-width" style="background:orange;opacity: 0.6;width: 25%;">
-		<a href="categorizedbyplatform.html"style="font-size: 20px;color:black;">Platform:</a><br>
+		<a href="{{ url_for('browse_all_platforms')}}"style="font-size: 20px;color:black;">Platform:</a><br>
 		<a href="{{ url_for('browse_by_publisher', browse_key="XB")}}"style="color: black;">1. X-Box</a><br>
 		<a href="{{ url_for('browse_by_publisher', browse_key="PC")}}"style="color: black;">2. PC</a><br>
 		<a href="{{ url_for('browse_by_publisher', browse_key="Wii")}}"style="color: black;">3. Wii</a><br>
 	</fieldset>
   	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	<fieldset class="fieldset-auto-width" style="background:palevioletred;opacity: 0.6;width: 25%;">
-	    <a href="categorizedbybestseller.html" style="font-size: 20px;color:black;">Best-seller:</a><br>
+	    <a href="{{ url_for('browse_best_sellers')}}" style="font-size: 20px;color:black;">Best-seller:</a><br>
 		<a href="{{ url_for('product', game_name="Halo 2", game_platform="XB")}}"style="color: black;">1. Halo 2</a><br>
 		<a href="{{ url_for('product', game_name="Tom Clancy's Splinter Cell: Double Agent", game_platform="X360")}}"style="color: black;">2. Tom Clancy's Splinter Cell</a><br>
 		<a href="{{ url_for('product', game_name="Fable", game_platform="X360")}}"style="color: black;">3. Fable</a><br>

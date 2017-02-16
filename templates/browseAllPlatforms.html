@@ -1,0 +1,21 @@
+{% extends "basic.html" %}
+
+{% block title %}
+<title> All Platforms </title>
+{% endblock %}
+
+{% block stylesheet %}
+<link rel="stylesheet" href="{{ url_for('static', filename='basic.css')}}">
+<link rel="stylesheet" href="{{ url_for('static', filename='stylesheet_allPlatforms.css')}}">
+{% endblock %}
+
+{% block content %}
+<div id="content">
+    <h2> All Platforms </h2>
+    <ul id="platforms">
+        {%  for platform in result_list %}
+        <li><a id="platforms" href="{{ url_for('browse_by_platform', browse_key=platform)}}">{{ platform }}</a></li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

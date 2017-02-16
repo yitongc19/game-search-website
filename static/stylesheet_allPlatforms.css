@@ -1,0 +1,9 @@
+footer{
+    position: relative;
+}
+
+#platforms a{
+    color: saddlebrown;
+    font-size: 25px;
+    columns: 3;
+}

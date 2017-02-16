@@ -41,7 +41,7 @@ def get_display_by_name(myname):
     'userscore':8, 'usercount':322, 'developer':Nintendo, 'rating':'E'}...]
     """
     if not myname.isalnum():
-        myname = parseWithSpace(myname)
+        myname = parse(myname)
 
     try:
         connection = psycopg2.connect(database=database, user=user, password=password)
@@ -50,8 +50,8 @@ def get_display_by_name(myname):
         exit()
     try:
         cursor = connection.cursor()
-        query = "SELECT * FROM video_game WHERE lower(name) = %s"
-        cursor.execute(query, (myname.lower(),))
+        query = "SELECT * FROM video_game WHERE lower(name) LIKE %s"
+        cursor.execute(query, ("%"+myname.lower()+"%",))
 
     except Exception as e:
         print('Cursor error: {}'.format(e))
@@ -112,7 +112,7 @@ def get_search_by_name(myname):
     'userscore':8, 'usercount':322, 'developer':Nintendo, 'rating':'E'}...]
     """
     if not myname.isalnum():
-        myname = parseWithSpace(myname)
+        myname = parse(myname)
 
     try:
         connection = psycopg2.connect(database=database, user=user, password=password)
@@ -243,7 +243,7 @@ def get_search_by_publisher(mypublisher):
     'userscore':8.3, 'usercount':709, 'developer':Nintendo, 'rating':E}...]
     """
     if not mypublisher.isalnum():
-        mypublisher = parseWithSpace(mypublisher)
+        mypublisher = parse(mypublisher)
 
     try:
         connection = psycopg2.connect(database=database, user=user, password=password)
@@ -746,7 +746,7 @@ def getHighRatings():
     gameList = []
     
     for row in cursor:
-        if row.get("User_Score")!=tbd:
+        if row.get("User_Score")!= 'tbd':
             mygame = row.get("Name")
             gameList.append(mygame)
     
@@ -773,25 +773,31 @@ def getAllPublisher():
         connection.close()
         exit()
 
-    gameList = []
+    publisherList = []
     for row in cursor:  
         mypublisher = row.get("Publisher")
-        gameList.append(mypublisher)
+        publisherList.append(mypublisher)
     
-    return gameList
+    return publisherList
     
-def parseWithSpace(inputStr):
+def parse(inputStr):
     """
     Internal facing method that removes all the special characters from the input string
     except for spaces.
     :param inputStr:
     :return: the parsed string
     """
-    pattern = re.compile("[^a-zA-Z\d\s]")
-    return pattern.sub('', inputStr)
+    result_string = ""
+    for c in inputStr:
+        if allowedChar(c):
+            result_string += c
+    return result_string
 
-
-
+def allowedChar(char):
+    if char == " " or char == "." or char == ":" or char == "," or char == "-" or char == "\'" or char.isalnum():
+        return True
+    else:
+        return False
 
 if __name__ == '__main__':
 #    print(get_display_by_genre("Sports"))
