@@ -50,8 +50,8 @@ def get_display_by_name(myname):
         exit()
     try:
         cursor = connection.cursor()
-        query = "SELECT * FROM video_game WHERE name = %s"
-        cursor.execute(query, (myname,))
+        query = "SELECT * FROM video_game WHERE lower(name) = %s"
+        cursor.execute(query, (myname.lower(),))
 
     except Exception as e:
         print('Cursor error: {}'.format(e))
@@ -253,8 +253,8 @@ def get_search_by_publisher(mypublisher):
 
     try:
         cursor = connection.cursor()
-        query = "SELECT * FROM video_game WHERE publisher LIKE %s"
-        cursor.execute(query, ('%'+mypublisher+'%',))
+        query = "SELECT * FROM video_game WHERE lower(publisher) LIKE %s"
+        cursor.execute(query, ('%'+mypublisher.lower()+'%',))
 
     except Exception as e:
         print('Cursor error: {}'.format(e))
@@ -310,8 +310,8 @@ def get_display_by_publisher(mypublisher):
 
     try:
         cursor = connection.cursor()
-        query = "SELECT name, platform FROM video_game WHERE publisher=%s"
-        cursor.execute(query, (mypublisher,))
+        query = "SELECT name, platform FROM video_game WHERE lower(publisher)=%s"
+        cursor.execute(query, mypublisher.lower(),)
 
     except Exception as e:
         print('Cursor error: {}'.format(e))
@@ -353,8 +353,8 @@ def get_display_by_genre(mygenre):
 
     try:
         cursor = connection.cursor()
-        query = "SELECT name, platform FROM video_game WHERE genre=%s"
-        cursor.execute(query, (mygenre,))
+        query = "SELECT name, platform FROM video_game WHERE lower(genre)=%s"
+        cursor.execute(query, (mygenre.lower(),))
 
     except Exception as e:
         print('Cursor error: {}'.format(e))
@@ -407,8 +407,8 @@ def get_display_by_platform(myplatform):
 
     try:
         cursor = connection.cursor()
-        query = "SELECT name, genre FROM video_game WHERE platform=%s"
-        cursor.execute(query, (myplatform,))
+        query = "SELECT name, genre FROM video_game WHERE lower(platform)=%s"
+        cursor.execute(query, (myplatform.lower(),))
 
     except Exception as e:
         print('Cursor error: {}'.format(e))
@@ -459,8 +459,8 @@ def get_name_platform_display_by_genre(mygenre):
 
     try:
         cursor = connection.cursor()
-        query = "SELECT name, platform FROM video_game WHERE genre=%s"
-        cursor.execute(query, (mygenre,))
+        query = "SELECT name, platform FROM video_game WHERE lower(genre)=%s"
+        cursor.execute(query, (mygenre.lower(),))
 
     except Exception as e:
         print('Cursor error: {}'.format(e))
@@ -510,8 +510,8 @@ def get_name_display_by_genre(mygenre):
 
     try:
         cursor = connection.cursor()
-        query = "SELECT name FROM video_game WHERE genre=%s"
-        cursor.execute(query, (mygenre,))
+        query = "SELECT name FROM video_game WHERE lower(genre)=%s"
+        cursor.execute(query, (mygenre.lower(),))
 
     except Exception as e:
         print('Cursor error: {}'.format(e))
@@ -550,8 +550,8 @@ def get_name_display_by_developer(mydeveloper):
 
     try:
         cursor = connection.cursor()
-        query = "SELECT name FROM video_game WHERE developer=%s"
-        cursor.execute(query, (mydeveloper,))
+        query = "SELECT name FROM video_game WHERE lower(developer)=%s"
+        cursor.execute(query, (mydeveloper.lower(),))
 
     except Exception as e:
         print('Cursor error: {}'.format(e))
@@ -603,8 +603,8 @@ def get_password_with_account_name(myaccountname):
 
     try:
         cursor = accountconnection.cursor()
-        query = "SELECT Password FROM account_info WHERE Name=%s"
-        cursor.execute(query, (myaccountname,))
+        query = "SELECT Password FROM account_info WHERE lower(Name)=%s"
+        cursor.execute(query, (myaccountname.lower(),))
 
     except Exception as e:
         print('Cursor error: {}'.format(e))
@@ -652,8 +652,8 @@ def get_user_info(myaccountname):
 
     try:
         cursor = accountconnection.cursor()
-        query = "SELECT Email, Favouritegame FROM account_info WHERE Name=%s"
-        cursor.execute(query, (myaccountname,))
+        query = "SELECT Email, Favouritegame FROM account_info WHERE lower(Name)=%s"
+        cursor.execute(query, (myaccountname.lower(),))
 
     except Exception as e:
         print('Cursor error: {}'.format(e))
@@ -702,8 +702,8 @@ def get_password_with_email(myuseremail):
 
     try:
         cursor = accountconnection.cursor()
-        query = "SELECT Password FROM account_info WHERE Email=%s"
-        cursor.execute(query, (myuseremail,))
+        query = "SELECT Password FROM account_info WHERE lower(Email)=%s"
+        cursor.execute(query, (myuseremail.lower(),))
 
     except Exception as e:
         print('Cursor error: {}'.format(e))
@@ -723,7 +723,63 @@ def get_password_with_email(myuseremail):
 
     return mypassword
 
+def getHighRatings():
+    """
+    Return the first 100 games with the highest ratings.
+    """
+    try:
+        connection = psycopg2.connect(database=database, user=user, password=password)
+    except Exception as e:
+        print(e)
+        exit()
 
+    try:
+        cursor = connection.cursor()
+        query = "SELECT name FROM video_game ORDER BY User_Score"
+        cursor.execute(query)
+
+    except Exception as e:
+        print('Cursor error: {}'.format(e))
+        connection.close()
+        exit()
+
+    gameList = []
+    
+    for row in cursor:
+        if row.get("User_Score")!=tbd:
+            mygame = row.get("Name")
+            gameList.append(mygame)
+    
+    return gameList[:100]
+
+
+def getAllPublisher():
+    """
+    Return a list of all publishers.
+    """
+    try:
+        connection = psycopg2.connect(database=database, user=user, password=password)
+    except Exception as e:
+        print(e)
+        exit()
+
+    try:
+        cursor = connection.cursor()
+        query = "SELECT Name FROM video_game"
+        cursor.execute(query)
+
+    except Exception as e:
+        print('Cursor error: {}'.format(e))
+        connection.close()
+        exit()
+
+    gameList = []
+    for row in cursor:  
+        mypublisher = row.get("Publisher")
+        gameList.append(mypublisher)
+    
+    return gameList
+    
 def parseWithSpace(inputStr):
     """
     Internal facing method that removes all the special characters from the input string
@@ -733,6 +789,8 @@ def parseWithSpace(inputStr):
     """
     pattern = re.compile("[^a-zA-Z\d\s]")
     return pattern.sub('', inputStr)
+
+
 
 
 if __name__ == '__main__':

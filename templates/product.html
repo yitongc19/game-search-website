@@ -13,17 +13,18 @@
     <div id="main_content">
         <h1>{{ target_game.name }}</h1>
         <ul id="product_info">
-            <li>Supported Platform:{{ target_game.platform }}</li>
-            <li>Year of Release:{{ target_game.year_of_release }}</li>
-            <li>Genre:{{ target_game.genre }}</li>
-            <li>Publisher:{{ target_game.publisher }}</li>
-            <li>Sale Record worldwide: North America-{{ target_game.NA_sales }}, Europe-{{ target_game.EU_sales }},
-            Japan-{{ target_game.JP_sales }}, Other Places-{{ target_game.Other_sales }}</li>
-            <li>Critique Score: {{ target_game.critic_score }}
-            <br><p id="score_count">（num of critiques:{{ target_game.critic_count }})</p> </li>
-            <li>User Score: {{ target_game.user_score }}
-            <br><p id="score_count"> (num of users:{{ target_game.user_count }})</p></li>
-            <li>Developer Info: {{ target_game.developer }} </li>
+            <li>Supported Platform:&nbsp&nbsp{{ target_game.platform }}</li>
+            <li>Year of Release:&nbsp&nbsp{{ target_game.year_of_release }}</li>
+            <li>Genre:&nbsp&nbsp{{ target_game.genre }}</li>
+            <li>Publisher:&nbsp&nbsp{{ target_game.publisher }}</li>
+            <li>Sale Record worldwide: &nbsp&nbsp<br>North America-{{ target_game.NA_sales|string}},
+                <br>Europe-{{ target_game.EU_sales|string}},
+                <br>Japan-{{ target_game.JP_sales | string}}, <br>Other Places-{{ target_game.Other_sales|string }}</li>
+            <li>Critique Score:&nbsp&nbsp {{ target_game.critic_score |string}}
+            <br><p id="score_count">（num of critiques:{{ target_game.critic_count|string}})</p> </li>
+            <li>User Score: &nbsp&nbsp{{ target_game.user_score }}
+            <br><p id="score_count"> (num of users:{{ target_game.user_count | string}})</p></li>
+            <li>Developer Info: &nbsp&nbsp{{ target_game.developer }} </li>
             <li>ESBR Rating: {{ target_game.rating }} </li>
         </ul>
     </div>
@@ -34,19 +35,21 @@
         <fieldset>
             <p style="font-size: 18px; font-weight: bold;">Similar Games:</p>
             <ul id="similar_games" >
-                <li><a href="game1.html">game1</a></li>
-                <li><a href="game2.html">game2</a></li>
-                <li><a href="game3.html">game3</a></li>
+                {% for game in similar_game %}
+                    <li><a href="{{ url_for('product', game_name=game.name, game_platform=game.platform)}}">
+                        {{ game.name }}</a></li>
+                {% endfor %}
             </ul>
         </fieldset>
         </div>
-        <div id="games_by_same_developer">
+        <div id="games_by_same_publisher">
             <fieldset>
-                <p style="font-size: 18px; font-weight: bold;">Games by the same developers:</p>
+                <p style="font-size: 18px; font-weight: bold;">Games by the same publisher:</p>
                 <ul id="games_by_same_developer">
-                    <li><a href="game1.html">game1</a></li>
-                    <li><a href="game2.html">game2</a></li>
-                    <li><a href="game3.html">game3</a></li>
+                    {% for game in same_publisher %}
+                    <li><a href="{{ url_for('product', game_name=game.name, game_platform=game.platform)}}">
+                        {{ game.name }}</a></li>
+                {% endfor %}
                 </ul>
             </fieldset>
         </div>
