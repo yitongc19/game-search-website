@@ -73,13 +73,19 @@ def product(game_name, game_platform):
     for game in game_info:
         if game['platform'] == game_platform:
             target_game = game
-    return render_template('product.html', target_game=target_game)
+    game_genre = target_game['genre']
+    game_same_genre = api.get_display_by_genre(game_genre)
+    similar_game = game_same_genre[:3]
+    game_publisher = target_game['publisher']
+    game_same_publisher = api.get_display_by_publisher(game_publisher)
+    same_publisher = game_same_publisher[:3]
+    return render_template('product.html', target_game=target_game, similar_game=similar_game, same_publisher=same_publisher)
 
 #generic search method
 @app.route('/search/<generic_search_key>')
 def genericSearch(search_key):
     name_result_list = api.get_search_by_name(search_key)
-    return render_template("Search_result.html", game_list=result_list)
+    return render_template("Search_result.html", game_list=name_result_list)
 
 
 if __name__ == '__main__':

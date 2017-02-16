@@ -11,10 +11,11 @@ input[type=radio]{
 
 a{
     font-size: 22px;
+    text-decoration: none;
 }
 
-#cat{
-    text-decoration: none;
+#search_result a{
+    color: saddlebrown;
     font-size: 25px;
 }
 
