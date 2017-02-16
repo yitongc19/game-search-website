@@ -73,11 +73,14 @@
         <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
       </div>
         <div id="slideshowpic">
-        <a href="/SuperMario/"><img class="mySlides" src="{{ url_for('static', filename='supermario.jpg')}}" alt="Game View" style="width: 100%; -webkit-border-radius: ;-moz-border-radius: ;
+        <a href="{{ url_for('product', game_name="Super Mario 3D Land", game_platform="3DS")}}">
+            <img class="mySlides" src="{{ url_for('static', filename='supermario.jpg')}}" alt="Game View" style="width: 100%; -webkit-border-radius: ;-moz-border-radius: ;
         border-radius: 7%"></a>
-        <a href="/MetalGearSolid/"><img class="mySlides" src="{{ url_for('static', filename='TopGame2.jpg')}}" style="width: 100%; -webkit-border-radius: ;-moz-border-radius: ;
+        <a href="{{ url_for('product', game_name="Metal Gear Rising: Revengeance", game_platform="X360")}}">
+            <img class="mySlides" src="{{ url_for('static', filename='TopGame2.jpg')}}" style="width: 100%; -webkit-border-radius: ;-moz-border-radius: ;
         border-radius: 7%"></a>
-        <a href="/ResidentEvil4/"><img class="mySlides" src="{{ url_for('static', filename='TopGame3.jpg')}}" style="width: 100%; -webkit-border-radius: ;-moz-border-radius: ;
+        <a href="{{ url_for('product', game_name="Resident Evil 4", game_platform="PC")}}">
+            <img class="mySlides" src="{{ url_for('static', filename='TopGame3.jpg')}}" style="width: 100%; -webkit-border-radius: ;-moz-border-radius: ;
         border-radius: 7%"></a></div>
     </div>
 
@@ -135,14 +138,14 @@
 <div id="otherRec">
 <fieldset id="other_recommended">
     <legend><a href="recommended.html" style="color: black; font-size: 20px;">Other Recommendations:</a><br></legend>
-  	<a href="supermario.html">
-        <img class="myrecommended" src="{{ url_for('static', filename='supermario.jpg')}}" alt=""/></a>
+  	<a href="{{ url_for('product', game_name="The Witcher 3: Wild Hunt", game_platform="PC")}}">
+        <img class="myrecommended" src="{{ url_for('static', filename='Other_Rec1.jpg')}}" alt=""/></a>
   	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  	<a href="pokemon.html">
-        <img class="myrecommended" src="{{ url_for('static', filename='pokemon.jpg')}}" alt=""/></a>
+  	<a href="{{ url_for('product', game_name="The Orange Box", game_platform="PC")}}">
+        <img class="myrecommended" src="{{ url_for('static', filename='Other_Rec2.jpg')}}" alt=""/></a>
   	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  	<a href="wii.jpg">
-        <img class="myrecommended" src="{{ url_for('static', filename='wii.jpg')}}" alt=""/></a>
+  	<a href="{{ url_for('product', game_name="Deus Ex", game_platform="PC")}}">
+        <img class="myrecommended" src="{{ url_for('static', filename='Other_Rec3.jpg')}}" alt=""/></a>
 </fieldset>
 <br><br>
 </div>
@@ -153,23 +156,23 @@
     <legend>Categorized by:</legend>
 	<br><fieldset class="fieldset-auto-width" style="background:cornflowerblue;opacity: 0.6;width: 25%;">
 		<a href="categorizedbypublisher.html" style="font-size: 20px;color:black;">Publisher:</a><br>
-		<a href="/publisher/activision" style="color: black;">1. Activision</a><br>
-		<a href="/publisher/505Games"style="color: black;">2. 505 Games</a><br>
-		<a href="/publisher/Nintendo"style="color: black;">3. Nintendo</a><br>
+		<a href="{{ url_for('browse_by_publisher', browse_key="Activision")}}" style="color: black;">1. Activision</a><br>
+		<a href="{{ url_for('browse_by_publisher', browse_key="505 Games")}}"style="color: black;">2. 505 Games</a><br>
+		<a href="{{ url_for('browse_by_publisher', browse_key="Nintendo")}}"style="color: black;">3. Nintendo</a><br>
 	</fieldset>
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	<fieldset class="fieldset-auto-width" style="background:orange;opacity: 0.6;width: 25%;">
 		<a href="categorizedbyplatform.html"style="font-size: 20px;color:black;">Platform:</a><br>
-		<a href="/platform/xb"style="color: black;">1. X-Box</a><br>
-		<a href="/platform/pc"style="color: black;">2. PC</a><br>
-		<a href="/platform/wii"style="color: black;">3. Wii</a><br>
+		<a href="{{ url_for('browse_by_publisher', browse_key="XB")}}"style="color: black;">1. X-Box</a><br>
+		<a href="{{ url_for('browse_by_publisher', browse_key="PC")}}"style="color: black;">2. PC</a><br>
+		<a href="{{ url_for('browse_by_publisher', browse_key="Wii")}}"style="color: black;">3. Wii</a><br>
 	</fieldset>
   	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	<fieldset class="fieldset-auto-width" style="background:palevioletred;opacity: 0.6;width: 25%;">
 	    <a href="categorizedbybestseller.html" style="font-size: 20px;color:black;">Best-seller:</a><br>
-		<a href="/game/halo2"style="color: black;">1. Halo 2</a><br>
-		<a href="/game/TomClancysSplinterCell"style="color: black;">2. Tom Clancy's Splinter Cell</a><br>
-		<a href="/game/Fable"style="color: black;">3. Fable</a><br>
+		<a href="{{ url_for('product', game_name="Halo 2", game_platform="XB")}}"style="color: black;">1. Halo 2</a><br>
+		<a href="{{ url_for('product', game_name="Tom Clancy's Splinter Cell: Double Agent", game_platform="X360")}}"style="color: black;">2. Tom Clancy's Splinter Cell</a><br>
+		<a href="{{ url_for('product', game_name="Fable", game_platform="X360")}}"style="color: black;">3. Fable</a><br>
 	</fieldset>
 </fieldset>
 </div>
