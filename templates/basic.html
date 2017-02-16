@@ -14,7 +14,26 @@
             {%  block stylesheet %}
             <link rel="stylesheet" href="{{ url_for('static', filename='basic.css')}}">
             {% endblock %}
+            
+            {% block javascript %}
+            <script type="text/javascript" src="{{ url_for('static', filename='basic.js')}}"></script>
+            
+            <script type="text/javascript">
+                function globalSearchResult() {
 
+                    var search_result_url = "{{ url_for('searchResultbyName', search_key='NOTAKEY')}}";
+                    var search_input = document.getElementById("global_search");
+                    var result_url = search_result_url.replace('NOTAKEY', search_input.value);
+
+                    window.location = result_url;
+                }
+            </script>
+            
+            {% endblock %}
+            
+            {% block extra_javascript %}
+            {% endblock %}
+            
             <!--The functions including log-in and search-->
             {% block functions %}
             <div id="functions_container">
@@ -24,10 +43,10 @@
                     </form>
                 </div>
                 <div id="global_search_container">
-                    <button type="submit"
+                    <button onclick="globalSearchResult()"  type="submit"
                     style="width: 35px;height: 28px;border-radius: 5px;background: white; float: right; opacity: 0.9;"> 🔍
                     </button>
-                    <input id="search" type="text" name="search" value=""
+                    <input id="global_search" type="text" name="search" value=""
                     style="float:right;width:150px;height: 20px;border-radius: 8px;opacity: 0.6; font-size: 14px;">
                 </div>
             </div>
@@ -62,9 +81,6 @@
         {% endblock %}
     </body>
 
-    {% block javascript %}
-                <script type="text/javascript" src="{{ url_for('static', filename="basic.js")}}"></script>
-    {% endblock %}
 
     <footer>
         <div id="contact_developer">

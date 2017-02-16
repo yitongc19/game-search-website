@@ -79,13 +79,6 @@ def product(game_name, game_platform):
 @app.route('/search/<generic_search_key>')
 def genericSearch(search_key):
     name_result_list = api.get_search_by_name(search_key)
-    publisher_result_list = api.get_search_by_publisher(search_key)
-    result_list = []
-    for item in name_result_list:
-        result_list.append(item)
-    for item in publisher_result_list:
-        result_list.append(item)
-        
     return render_template("Search_result.html", game_list=result_list)
 
 
