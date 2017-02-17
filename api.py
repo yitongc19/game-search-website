@@ -735,7 +735,7 @@ def getHighRatings():
 
     try:
         cursor = connection.cursor()
-        query = "SELECT name, platform FROM video_game ORDER BY User_Score"
+        query = "SELECT userscore, name, platform FROM video_game ORDER BY User_Score"
         cursor.execute(query)
 
     except Exception as e:
@@ -746,9 +746,9 @@ def getHighRatings():
     gameList = []
     
     for row in cursor:
-        if row.get("User_Score") != 'tbd':
+        myuserscore, myname, myplatform = row
+        if myuserscore != 'tbd':
             gamedic = {}
-            myname, myplatform = row
             gamedic["platform"] = myplatform
             gamedic["name"] = myname
             gameList.append(gamedic)
