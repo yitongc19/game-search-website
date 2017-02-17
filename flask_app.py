@@ -47,7 +47,7 @@ def browse_by_genre(browse_key):
 @app.route('/browse/platform/<browse_key>')
 def browse_by_platform(browse_key):
     result_list = api.get_display_by_platform(browse_key)
-    return render_template('browsebyplatform.html', browse_key=browse_key, result_list=result_list)
+    return render_template('browse.html', browse_key=browse_key, result_list=result_list)
 
 @app.route('/browse/publisher/<browse_key>')
 def browse_by_publisher(browse_key):

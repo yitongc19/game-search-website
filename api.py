@@ -408,7 +408,7 @@ def get_display_by_platform(myplatform):
 
     try:
         cursor = connection.cursor()
-        query = "SELECT name, genre FROM video_game WHERE lower(platform)=%s"
+        query = "SELECT name, platform FROM video_game WHERE lower(platform)=%s"
         cursor.execute(query, (myplatform.lower(),))
 
     except Exception as e:
@@ -420,8 +420,8 @@ def get_display_by_platform(myplatform):
 
     for row in cursor:
         gamedic = {}
-        myname, mygenre = row
-        gamedic["genre"] = mygenre
+        myname, myplatform = row
+        gamedic["platform"] = myplatform
         gamedic["name"] = myname
         gameList.append(gamedic)
 
