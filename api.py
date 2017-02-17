@@ -844,7 +844,7 @@ def getAllPlatform():
         if myplatform not in platformList:
             platformList.append(myplatform)
 
-    return gameList
+    return platformList
 
     
 def parse(inputStr):
