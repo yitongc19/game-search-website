@@ -799,7 +799,7 @@ def getAllPublisher():
 
     publisherList = []
     for row in cursor:  
-        mypublisher = row.fetchone()
+        mypublisher = row[0]
         publisherList.append(mypublisher)
     
     return publisherList
