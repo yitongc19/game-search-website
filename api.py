@@ -828,7 +828,7 @@ def getAllPlatform():
 
     try:
         cursor = connection.cursor()
-        query = "SELECT Name FROM video_game"
+        query = "SELECT platform FROM video_game"
         cursor.execute(query)
 
     except Exception as e:
@@ -838,7 +838,7 @@ def getAllPlatform():
 
     gameList = []
     for row in cursor:
-        myplatform = row.get("Platform")
+        myplatform = row[0]
         gameList.append(myplatform)
 
     return gameList
