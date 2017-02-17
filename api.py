@@ -16,7 +16,7 @@ app = flask.Flask(__name__)
 
 database = 'zhonge'
 user = 'zhonge'
-password = getpass.getpass('Enter PostgreSQL password for user {}: '.format(user))
+password = 'spider345sunshine'
 # Login to the database
 
 
@@ -746,7 +746,7 @@ def getHighRatings():
     gameList = []
     
     for row in cursor:
-        if row.get("User_Score")!= 'tbd':
+        if row.get("User_Score") != 'tbd':
             gamedic = {}
             myname, myplatform = row
             gamedic["platform"] = myplatform
@@ -813,11 +813,40 @@ def getAllPublisher():
         publisherList.append(mypublisher)
     
     return publisherList
+
+
+def getAllPlatform():
+    """
+    Return a list of all platforms
+    """
+
+    try:
+        connection = psycopg2.connect(database=database, user=user, password=password)
+    except Exception as e:
+        print(e)
+        exit()
+
+    try:
+        cursor = connection.cursor()
+        query = "SELECT Name FROM video_game"
+        cursor.execute(query)
+
+    except Exception as e:
+        print('Cursor error: {}'.format(e))
+        connection.close()
+        exit()
+
+    gameList = []
+    for row in cursor:
+        myplatform = row.get("Platform")
+        gameList.append(myplatform)
+
+    return gameList
+
     
 def parse(inputStr):
     """
-    Internal facing method that removes all the special characters from the input string
-    except for spaces.
+    Internal facing method that parse the input string into the desired format.
     :param inputStr:
     :return: the parsed string
     """
@@ -828,6 +857,11 @@ def parse(inputStr):
     return result_string
 
 def allowedChar(char):
+    """
+    Judge whether the input character is allowed.
+    :param char:
+    :return: true if the character is allowed
+    """
     if char == " " or char == "." or char == ":" or char == "," or char == "-" or char == "\'" or char.isalnum():
         return True
     else:

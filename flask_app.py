@@ -65,7 +65,7 @@ def browse_all_publishers():
 def browse_all_platforms():
     result_list = api.getAllPlatforms()
     return render_template('browseAllPlatforms.html', result_list=result_list)
-
+"""
 @app.route('/browseHighestRating/')
 def browse_highest_rating():
     result_list = api.getHighRatings()
@@ -73,9 +73,9 @@ def browse_highest_rating():
 
 @app.route('/browseBestSellers/')
 def browse_best_sellers():
-    result_list = api.getBestSellers()
+    result_list = api.getHighSaleRecord()
     return render_template('browseBestSellers.html', result_list=result_list)
-"""
+
 
 @app.route('/login/')
 def login():
