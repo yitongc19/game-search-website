@@ -14,17 +14,17 @@
         <h1>{{ target_game.name }}</h1>
         <ul id="product_info">
             <li>Supported Platform:&nbsp&nbsp{{ target_game.platform }}</li>
-            <li>Year of Release:&nbsp&nbsp{{ target_game.year_of_release }}</li>
+            <li>Year of Release:&nbsp&nbsp{{ target_game.yearofrelease }}</li>
             <li>Genre:&nbsp&nbsp{{ target_game.genre }}</li>
             <li>Publisher:&nbsp&nbsp{{ target_game.publisher }}</li>
-            <li>Sale Record worldwide: &nbsp&nbsp<br>&nbsp&nbsp&nbsp&nbspNorth America-{{ target_game.NA_sales|string}},
-                <br>&nbsp&nbsp&nbsp&nbspEurope-{{ target_game.EU_sales|string}},
-                <br>&nbsp&nbsp&nbsp&nbspJapan-{{ target_game.JP_sales | string}},
-                <br>&nbsp&nbsp&nbsp&nbspOther Places-{{ target_game.Other_sales|string }}</li>
-            <li>Critique Score:&nbsp&nbsp {{ target_game.critic_score |string}}
-            <br><p id="score_count">（num of critiques:{{ target_game.critic_count|string}})</p> </li>
-            <li>User Score: &nbsp&nbsp{{ target_game.user_score }}
-            <br><p id="score_count"> &nbsp&nbsp&nbsp&nbsp(num of users:{{ target_game.user_count|string}})</p></li>
+            <li>Sale Record worldwide: &nbsp&nbsp<br>&nbsp&nbsp&nbsp&nbspNorth America-{{ target_game.nasales|string}},
+                <br>&nbsp&nbsp&nbsp&nbspEurope-{{ target_game.eusales|string}},
+                <br>&nbsp&nbsp&nbsp&nbspJapan-{{ target_game.jpsales | string}},
+                <br>&nbsp&nbsp&nbsp&nbspOther Places-{{ target_game.othersales|string }}</li>
+            <li>Critique Score:&nbsp&nbsp {{ target_game.criticscore |string}}
+            <br><p id="score_count">（num of critiques:{{ target_game.criticcount|string}})</p> </li>
+            <li>User Score: &nbsp&nbsp{{ target_game.userscore }}
+            <br><p id="score_count"> &nbsp&nbsp&nbsp&nbsp(num of users:{{ target_game.usercount|string}})</p></li>
             <li>Developer Info: &nbsp&nbsp{{ target_game.developer }} </li>
             <li>ESBR Rating: {{ target_game.rating }} </li>
         </ul>
