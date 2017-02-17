@@ -165,9 +165,15 @@ def get_search_by_name(myname):
     return gameList
 
 """
+<<<<<<< HEAD
+@app.route('/user/change_your_email/<account_name>')
+def change_your_email(oldemail, newemail):
+    
+=======
 @app.route('/user/change_your_email/<new_email>')
 def change_your_email(oldemail, newemail):
 
+>>>>>>> 8dc791a7182a696f9fa90321010e224435f50f04
     :param oldemail (String):
     :param newemail (String):
 
@@ -175,7 +181,11 @@ def change_your_email(oldemail, newemail):
     Invalid input will return an empty string.
 
     Example: http://videogamessales/change_your_email/cheny2@carleton.edu
+<<<<<<< HEAD
+    
+=======
 
+>>>>>>> 8dc791a7182a696f9fa90321010e224435f50f04
 
 
 if re.match(r"[^@]+@[^@]+\.[^@]+", newemail) == None:
@@ -725,7 +735,7 @@ def getHighRatings():
 
     try:
         cursor = connection.cursor()
-        query = "SELECT name, platform FROM video_game ORDER BY User_Score"
+        query = "SELECT name, platform, User_Score FROM video_game ORDER BY User_Score"
         cursor.execute(query)
 
     except Exception as e:
@@ -736,9 +746,9 @@ def getHighRatings():
     gameList = []
     
     for row in cursor:
-        if row.get("User_Score") != 'tbd':
+        myname, myplatform, myuserscore = row
+        if myuserscore != 'tbd':
             gamedic = {}
-            myname, myplatform = row
             gamedic["platform"] = myplatform
             gamedic["name"] = myname
             gameList.append(gamedic)
@@ -789,7 +799,7 @@ def getAllPublisher():
 
     try:
         cursor = connection.cursor()
-        query = "SELECT Name FROM video_game"
+        query = "SELECT Publisher FROM video_game"
         cursor.execute(query)
 
     except Exception as e:
@@ -799,7 +809,7 @@ def getAllPublisher():
 
     publisherList = []
     for row in cursor:  
-        mypublisher = row.get("Publisher")
+        mypublisher = row[0]
         publisherList.append(mypublisher)
     
     return publisherList
@@ -818,7 +828,7 @@ def getAllPlatform():
 
     try:
         cursor = connection.cursor()
-        query = "SELECT Name FROM video_game"
+        query = "SELECT platform FROM video_game"
         cursor.execute(query)
 
     except Exception as e:
@@ -828,7 +838,7 @@ def getAllPlatform():
 
     gameList = []
     for row in cursor:
-        myplatform = row.get("Platform")
+        myplatform = row[0]
         gameList.append(myplatform)
 
     return gameList

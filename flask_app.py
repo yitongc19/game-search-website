@@ -37,9 +37,11 @@ def accountHome(account_name):
 @app.route('/browse/genre/<browse_key>')
 def browse_by_genre(browse_key):
     result_list = api.get_display_by_genre(browse_key)
+
     for result in result_list:
         if result['name'] is None:
             result['name'] = ""
+
     return render_template('browse.html', browse_key=browse_key, result_list=result_list)
 
 @app.route('/browse/platform/<browse_key>')

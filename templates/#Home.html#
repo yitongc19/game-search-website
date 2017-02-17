@@ -10,13 +10,35 @@
 {% endblock %}
 
 {% block javascript %}
-    <script type="text/javascript" src="{{ url_for('static', filename='getSearchInput.js')}}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='Home.js')}}"></script>
+     <script type="text/javascript">
+            var radios = document.getElementById("search_criteria");
+            var checkedCriteria;
+            for (var i = 0, length = radios.length; i<length; i++){
+                if (radios[i].checked){
+                    checkedCriteria = radios[i].value;
+                break;
+                }
+            }
+            var search_result_url;
+            if (checkedCriteria = "search_by_name"){
+                search_result_url = "{{ url_for('searchResultbyName', search_key='NOTAKEY')}}";
+            } else{
+                search_result_url = "{{ url_for('searchResultbyPublisher', search_key='NOTAKEY')}}";
+            }
+
+            var search_input = document.getElementById("search_keyword");
+
+            var result_url = search_result_url.replace('NOTAKEY', search_input.value);
+
+            window.location = result_url;
+        </script>
 {% endblock %}
 
 {% block function %}
 <div id="fuctions">
                 <div id="login">
-                    <form action="User_login.html">
+                    <form action="{{ url_for("login")}}">
                         <button type="submit" value="Log In">Log In</button>
                     </form>
                 </div>
@@ -51,9 +73,9 @@
         <div id="slideshowpic">
         <a href="/SuperMario/"><img class="mySlides" src="{{ url_for('static', filename='supermario.jpg')}}" alt="Game View" style="width: 100%; -webkit-border-radius: ;-moz-border-radius: ;
         border-radius: 7%"></a>
-        <a href="/MetalGearSolid/"><img class="mySlides" src="{{ url_for('static', filename='pokemon.jpg')}}" style="width: 100%; -webkit-border-radius: ;-moz-border-radius: ;
+        <a href="/MetalGearSolid/"><img class="mySlides" src="{{ url_for('static', filename='TopGame2.jpg')}}" style="width: 100%; -webkit-border-radius: ;-moz-border-radius: ;
         border-radius: 7%"></a>
-        <a href="/ResidentEvil4/"><img class="mySlides" src="{{ url_for('static', filename='wii.jpg')}}" style="width: 100%; -webkit-border-radius: ;-moz-border-radius: ;
+        <a href="/ResidentEvil4/"><img class="mySlides" src="{{ url_for('static', filename='TopGame3.jpg')}}" style="width: 100%; -webkit-border-radius: ;-moz-border-radius: ;
         border-radius: 7%"></a></div>
     </div>
 
@@ -93,14 +115,15 @@
 <div id="main_search">
 <fieldset>
     <legend> Find What You Want: </legend>
-	<input id="search" type="text" name="search" value=""
+	<input id="search_keyword" type="text"
 	style="width:90%;height: 40px;border-radius: 8px;opacity: 0.6; font-size: 20px;">
-	<button onclick="getSearchInput()" type="submit"
+	<button onclick="getSearchResult()"
 	style="width: 47px;height: 40px;border-radius: 5px;background: white; float: right; opacity: 0.9;"> 🔍</button>
 	<br><br>
     <form action="">
-    <input type="radio" name="search_criteria" value="search_by_name"> Search By Name
-    <input type="radio" name="search_criteria" value="search_by_genre"> Search By Publisher
+    <input type="radio" id="search_criteria" value="search_by_name"> Search By Name
+    <input type="radio" id="search_criteria" value="search_by_genre"> Search By Publisher
+
 </form>
 </fieldset>
 <br>
