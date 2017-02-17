@@ -58,12 +58,18 @@ def browse_by_publisher(browse_key):
 @app.route('/browseAllPublishers/')
 def browse_all_publishers():
     result_list = api.getAllPublisher()
+    for result in result_list:
+        if result is None:
+            result['name'] = ""
     return render_template('browseAllPublishers.html', result_list=result_list)
 
 
 @app.route('/browseAllPlatforms/')
 def browse_all_platforms():
     result_list = api.getAllPlatform()
+    for result in result_list:
+        if result is None:
+            result['name'] = ""
     return render_template('browseAllPlatforms.html', result_list=result_list)
 
 @app.route('/browseHighestRating/')
