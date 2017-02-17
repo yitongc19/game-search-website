@@ -12,7 +12,7 @@
 {% block functions %}
         <script type="text/javascript">
             function checkPassword() {
-                var nameInput = document.getElementsByName("name");
+                var nameInput = document.getElementsByName("username");
                 var passwordInput = document.getElementsByName("password");
                 var url;
                 var result_url = "{{ url_for('login')}}";

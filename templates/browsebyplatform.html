@@ -15,7 +15,7 @@
         <!--Display the games-->
         <ul id="games">
             {%  for game in result_list %}
-                <li><a href="{{ url_for('product', game_name=game.name, game_genre=game.genre)}}">
+                <li><a href="{{ url_for('product', game_name=game.name, game_platform=game.genre)}}">
                     {{ game.name}}</a></li><br>
             {% endfor %}
         </ul>
