@@ -63,7 +63,7 @@ def browse_all_publishers():
 
 @app.route('/browseAllPlatforms/')
 def browse_all_platforms():
-    result_list = api.getAllPlatforms()
+    result_list = api.getAllPlatform()
     return render_template('browseAllPlatforms.html', result_list=result_list)
 
 @app.route('/browseHighestRating/')
