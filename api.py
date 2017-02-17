@@ -799,7 +799,7 @@ def getAllPublisher():
 
     try:
         cursor = connection.cursor()
-        query = "SELECT Name FROM video_game"
+        query = "SELECT Publisher FROM video_game"
         cursor.execute(query)
 
     except Exception as e:
@@ -809,7 +809,7 @@ def getAllPublisher():
 
     publisherList = []
     for row in cursor:  
-        mypublisher = row.get("Publisher")
+        mypublisher = row.fetchone()
         publisherList.append(mypublisher)
     
     return publisherList
