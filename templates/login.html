@@ -15,7 +15,7 @@
                 var nameInput = document.getElementsByName("name");
                 var passwordInput = document.getElementsByName("password");
 
-                var url = "{{url_for('accountHome', account_name = 'cheny2')}}"
+                var url = "{{url_for('accountHome', account_name='cheny2')}}";
                 window.location = url;
             }
         </script>
@@ -37,9 +37,9 @@
 
     <a id="forget_pass" href="forget_password.html">Forget Password?</a><br>
 
-    <input id="buttons" type="submit" value="Sign In" onclick="checkPassword()">
+    <input id="buttons" value="Sign In" onclick="checkPassword()">
     <br><br>
-    <input id="buttons" type="submit" value="Create Account">
+    <input id="buttons" value="Create Account">
     <br>
   </fieldset>
 </form>
