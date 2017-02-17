@@ -319,6 +319,7 @@ def get_display_by_publisher(mypublisher):
         exit()
 
     gameList = []
+    platformList = []
 
     for row in cursor:
         gamedic = {}
@@ -810,8 +811,9 @@ def getAllPublisher():
     publisherList = []
     for row in cursor:  
         mypublisher = row[0]
-        publisherList.append(mypublisher)
-    
+        if mypublisher not in publisherList:
+            publisherList.append(mypublisher)
+        
     return publisherList
 
 
@@ -836,10 +838,11 @@ def getAllPlatform():
         connection.close()
         exit()
 
-    gameList = []
+    platformList = []
     for row in cursor:
         myplatform = row[0]
-        gameList.append(myplatform)
+        if myplatform not in platformList:
+            platformList.append(myplatform)
 
     return gameList
 
