@@ -735,7 +735,7 @@ def getHighRatings():
 
     try:
         cursor = connection.cursor()
-        query = "SELECT userscore, name, platform FROM video_game ORDER BY User_Score"
+        query = "SELECT User_Score, name, platform FROM video_game ORDER BY User_Score"
         cursor.execute(query)
 
     except Exception as e:
