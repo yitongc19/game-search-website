@@ -28,7 +28,7 @@ input[type="text"]{
     border-radius:5px;
 }
 
-#buttons{
+button{
     float: left;
 	font-size:20px;
     width: 40%;
