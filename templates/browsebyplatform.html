@@ -1,0 +1,23 @@
+{% extends "basic.html" %}
+
+{% block title %}
+<title> {{ browse_key }} </title>
+{% endblock %}
+
+{% block stylesheet %}
+<link rel="stylesheet" href="{{ url_for('static', filename='basic.css')}}">
+<link rel="stylesheet" href="{{ url_for('static', filename='stylesheet_browsePage.css')}}">
+{% endblock %}
+
+{% block content %}
+    <div id="content">
+        <h1><u>{{ browse_key }}</u></h1>
+        <!--Display the games-->
+        <ul id="games">
+            {%  for game in result_list %}
+                <li><a href="{{ url_for('product', game_name=game.name, game_genre=game.genre)}}">
+                    {{ game.name}}</a></li><br>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}
