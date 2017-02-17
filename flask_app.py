@@ -60,12 +60,12 @@ def browse_all_publishers():
     result_list = api.getAllPublisher()
     return render_template('browseAllPublishers.html', result_list=result_list)
 
-"""
+
 @app.route('/browseAllPlatforms/')
 def browse_all_platforms():
     result_list = api.getAllPlatforms()
     return render_template('browseAllPlatforms.html', result_list=result_list)
-"""
+
 @app.route('/browseHighestRating/')
 def browse_highest_rating():
     result_list = api.getHighRatings()
