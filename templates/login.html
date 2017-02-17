@@ -14,13 +14,12 @@
             function checkPassword() {
                 var nameInput = document.getElementsByName("name");
                 var passwordInput = document.getElementsByName("password");
-                var name = nameInput.value;
 
                 account_set = {'cheny2':'12345', 'zhonge':'678910', 'zhaom':'1112131415'}
-                if (passwordInput == account_set[name]) {
+                if (passwordInput == account_set[nameInput.value]) {
                     var url = "{{url_for('accountHome', account_name = "NOTANAME")}}";
-                    url = url.replace("NOTANAME", name);
-                    window.location = url;
+                    var result_url = url.replace("NOTANAME", nameInput.value);
+                    window.location = result_url;
                 }
             }
         </script>
@@ -42,9 +41,9 @@
 
     <a id="forget_pass" href="forget_password.html">Forget Password?</a><br>
 
-    <button value="Sign In" onclick="checkPassword()">
+    <button id="Sign In" onclick="checkPassword()">
     <br><br>
-    <button value="Create Account">
+    <button id="Create Account">
     <br>
   </fieldset>
 </form>
