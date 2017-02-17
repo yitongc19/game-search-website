@@ -15,8 +15,11 @@
                 var nameInput = document.getElementsByName("name");
                 var passwordInput = document.getElementsByName("password");
 
-                var url = "{{url_for('accountHome', account_name='cheny2')}}";
-                window.location = url;
+                account_set = {'cheny2':'12345', 'zhonge':'678910', 'zhaom':'1112131415'}
+                if (passwordInput == account_set[nameInput.value]) {
+                    var url = "{{url_for('accountHome', account_name=nameInput.value)}}";
+                    window.location = url;
+                }
             }
         </script>
 {% endblock %}
@@ -37,9 +40,9 @@
 
     <a id="forget_pass" href="forget_password.html">Forget Password?</a><br>
 
-    <input id="buttons" value="Sign In" onclick="checkPassword()">
+    <button value="Sign In" onclick="checkPassword()">
     <br><br>
-    <input id="buttons" value="Create Account">
+    <button value="Create Account">
     <br>
   </fieldset>
 </form>
